@@ -231,11 +231,11 @@ function CopyButton({ text }) {
       type="button"
       onClick={handleCopy}
       disabled={!text}
-      className={`text-xs px-3 py-1 rounded-full border ${
-        text ? "border-white/15 text-slate-200 hover:border-accent" : "border-white/10 text-slate-500 cursor-not-allowed"
-      } transition`}
+      className={`text-[11px] px-3 py-1 rounded-full border ${
+        text ? "border-accent/40 text-slate-900 hover:border-accent" : "border-accent/20 text-slate-500 cursor-not-allowed"
+      } transition bg-white`}
     >
-      {copied ? "Copiado" : "Copiar"}
+      {copied ? "☑️ Copiado" : "Copiar"}
     </button>
   );
 }
@@ -244,22 +244,22 @@ function StatementCard({ stmt }) {
   return (
     <div className="rounded-2xl border border-white/10 overflow-hidden ion-panel">
       <div className="grid md:grid-cols-[260px_1fr]">
-        <div className="bg-ink/60 border-b md:border-b-0 md:border-r border-white/10 p-4 md:p-5">
-          <p className="text-slate-300 text-sm">Propiedad</p>
+        <div className="bg-white border-b md:border-b-0 md:border-r border-accent/25 p-4 md:p-5">
+          <p className="text-slate-600 text-sm">Propiedad</p>
           <p className="text-lg font-semibold text-accent">{stmt.property}</p>
         </div>
         <div className="p-4 md:p-5 space-y-3">
           <div>
-            <p className="text-slate-300 text-sm">Valor</p>
-            <p className="text-white font-semibold text-lg leading-relaxed">{stmt.value}</p>
+            <p className="text-slate-600 text-sm">Valor</p>
+            <p className="text-slate-900 font-semibold text-lg leading-relaxed">{stmt.value}</p>
             {stmt.qualifier && (
-              <p className="text-slate-200 text-sm mt-1">Calificador: {stmt.qualifier}</p>
+              <p className="text-slate-700 text-sm mt-1">Calificador: {stmt.qualifier}</p>
             )}
           </div>
           {stmt.references && (
-            <div className="bg-black/30 border border-white/5 rounded-xl p-3">
-              <p className="text-xs uppercase tracking-[0.18em] text-slate-400 mb-2">Referencias (añadir en la UI)</p>
-              <ul className="text-sm text-slate-200 space-y-1">
+            <div className="bg-white border border-accent/25 rounded-xl p-3">
+              <p className="text-xs uppercase tracking-[0.18em] text-slate-600 mb-2">Referencias (añadir en la UI)</p>
+              <ul className="text-sm text-slate-800 space-y-1">
                 <li>P854 dirección web de la referencia → URL oficial</li>
                 <li>P1065 dirección web de archivo → enlace de archive.org</li>
                 <li>P813 fecha de consulta → fecha actual al cargar la fuente</li>
@@ -277,10 +277,10 @@ function StepSection({ id, title, steps, afterFirst }) {
     <section id={id} className="py-12 md:py-16">
       <div className="flex items-center justify-between gap-4 mb-8">
         <div>
-          <p className="text-sm uppercase tracking-[0.18em] text-slate-400">Flujo</p>
-          <h2 className="text-3xl md:text-4xl font-display font-semibold text-white">{title}</h2>
+          <p className="text-sm uppercase tracking-[0.18em] text-slate-600">Flujo</p>
+          <h2 className="text-3xl md:text-4xl font-display font-semibold text-slate-900">{title}</h2>
         </div>
-        <div className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 text-sm text-slate-300">
+        <div className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-accent/40 text-sm text-slate-900">
           <span className="inline-flex h-2 w-2 rounded-full bg-accent" />
           3 pasos
         </div>
@@ -289,33 +289,33 @@ function StepSection({ id, title, steps, afterFirst }) {
       <div className="grid gap-6">
         {steps.map((step, index) => (
           <div key={step.title} className="space-y-6">
-            <article className="glass card-hover rounded-2xl border border-white/5 p-6 md:p-8 halo">
+            <article className="glass card-hover rounded-2xl border border-verde/35 p-6 md:p-8 halo">
               <div className="flex flex-col gap-6">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="h-10 w-10 rounded-full border border-white/10 flex items-center justify-center text-lg font-semibold text-accent bg-white/5">
+                    <span className="h-10 w-10 rounded-full border border-verde/50 flex items-center justify-center text-lg font-semibold text-verde bg-white">
                       {index + 1}
                     </span>
                     <div>
-                      <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
+                      <p className="text-xs uppercase tracking-[0.2em] text-slate-600">
                         Paso {index + 1}
                       </p>
-                      <h3 className="text-xl font-semibold text-white">{step.title}</h3>
+                    <h3 className="text-xl font-semibold text-slate-900">{step.title}</h3>
                     </div>
                   </div>
-                  <p className="text-slate-200 leading-relaxed">{step.detail}</p>
+                  <p className="text-slate-800 leading-relaxed">{step.detail}</p>
                   {step.actions && (
                     <div className="mt-4">
-                      <p className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-2">
+                      <p className="text-xs uppercase tracking-[0.2em] text-slate-600 mb-2">
                         Paso a paso
                       </p>
-                      <ul className="grid gap-2 text-sm text-slate-100">
+                      <ul className="grid gap-2 text-sm text-slate-800">
                         {step.actions.map((action) => (
                           <li
                             key={action}
-                            className="flex gap-2 items-start rounded-lg border border-white/5 bg-white/5 px-3 py-2"
+                            className="flex gap-2 items-start rounded-lg border border-accent/25 bg-white px-3 py-2"
                           >
-                            <span className="mt-0.5 inline-flex h-2.5 w-2.5 rounded-full bg-accent" />
+                            <span className="mt-0.5 inline-flex h-2.5 w-2.5 rounded-full bg-verde" />
                             <span className="leading-relaxed">{action}</span>
                           </li>
                         ))}
@@ -336,21 +336,21 @@ function StepSection({ id, title, steps, afterFirst }) {
 
 function VistaTable() {
   return (
-    <div className="glass rounded-3xl border border-white/5 p-8 md:p-10 halo">
+    <div className="glass rounded-3xl border border-accent/30 p-8 md:p-10 halo">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6">
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Vista tipo Wikidata</p>
-          <h2 className="text-3xl font-display font-semibold text-white">Etiquetas y descripciones</h2>
-          <p className="text-slate-200 mt-2">
+          <p className="text-xs uppercase tracking-[0.2em] text-slate-600">Vista tipo Wikidata</p>
+          <h2 className="text-3xl font-display font-semibold text-slate-900">Etiquetas y descripciones</h2>
+          <p className="text-slate-800 mt-2">
             Abre “En más idiomas” → agrega etiqueta y descripción. Usa esta tabla como guía.
           </p>
         </div>
-        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 text-sm text-slate-200">
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-accent/30 text-sm text-slate-800">
           Q137342677
         </span>
       </div>
-      <div className="overflow-hidden rounded-2xl border border-white/10 ion-panel">
-        <table className="ion-table">
+          <div className="overflow-hidden rounded-2xl border border-accent/30 ion-panel">
+            <table className="ion-table">
           <thead>
             <tr>
               <th>Idioma</th>
@@ -361,11 +361,11 @@ function VistaTable() {
           <tbody>
             {languageRows.map((row) => (
               <tr key={row.idioma}>
-                <td className="text-slate-200">{row.idioma}</td>
-                <td className="text-white font-semibold">{row.etiqueta}</td>
-                <td className="text-slate-200 leading-relaxed">
+                <td className="text-slate-800">{row.idioma}</td>
+                <td className="text-slate-900 font-semibold">{row.etiqueta}</td>
+                <td className="text-slate-800 leading-relaxed">
                   <div className="flex flex-col gap-2">
-                    <span className="text-sm text-slate-200">{row.descripcion || "—"}</span>
+                    <span className="text-sm text-slate-900">{row.descripcion || "—"}</span>
                     <div>
                       <CopyButton text={row.descripcion} />
                     </div>
@@ -382,29 +382,29 @@ function VistaTable() {
 
 export default function VictimaPage() {
   return (
-    <main className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-14">
-      <header className="glass rounded-3xl border border-white/5 p-8 md:p-12 halo">
+    <main className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-14 text-slate-900">
+      <header className="glass rounded-3xl border border-accent/30 p-8 md:p-12 halo">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-xs uppercase tracking-[0.2em] text-slate-300">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/30 text-xs uppercase tracking-[0.2em] text-slate-700">
               Tutorial de víctima
             </div>
-            <h1 className="text-4xl md:text-5xl font-display font-semibold text-white leading-tight">
+            <h1 className="text-4xl md:text-5xl font-display font-semibold text-slate-900 leading-tight">
               Persona 
             </h1>
-            <p className="text-lg text-slate-200 leading-relaxed">
+            <p className="text-lg text-slate-800 leading-relaxed">
               Guía completa para crear la ontología de una víctima: etiquetas multilingües, lista de declaraciones y ejemplo visual igual a la ficha de Wikidata, con referencias (URL + archivo + fecha de consulta) en cada afirmación.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
                 href="/"
-                className="inline-flex items-center gap-2 border border-white/15 text-white px-5 py-3 rounded-full hover:border-accent transition"
+                className="inline-flex items-center gap-2 border border-accent/40 text-slate-900 px-5 py-3 rounded-full hover:border-accent transition"
               >
                 ← Volver al home
               </a>
               <a
                 href="/auto"
-                className="inline-flex items-center gap-2 bg-accent text-ink font-semibold px-5 py-3 rounded-full shadow-glow hover:-translate-y-0.5 transition"
+                className="inline-flex items-center gap-2 bg-wikiblue/15 text-slate-900 font-semibold px-5 py-3 rounded-full border border-wikiblue hover:-translate-y-0.5 transition"
               >
                 Ver Auto Judicial
               </a>
@@ -417,25 +417,25 @@ export default function VictimaPage() {
       <nav className="flex flex-wrap items-center gap-3 mt-8">
         <a
           href="#pasos"
-          className="px-4 py-2 rounded-full border border-white/10 text-slate-200 hover:border-accent hover:text-white transition"
+          className="px-4 py-2 rounded-full border border-verde/50 text-slate-900 hover:border-verde hover:text-slate-900 transition"
         >
           Pasos
         </a>
         <a
           href="#lista"
-          className="px-4 py-2 rounded-full border border-white/10 text-slate-200 hover:border-accent hover:text-white transition"
+          className="px-4 py-2 rounded-full border border-rojo/50 text-slate-900 hover:border-rojo hover:text-slate-900 transition"
         >
           Lista de declaraciones
         </a>
         <a
           href="#vista"
-          className="px-4 py-2 rounded-full border border-white/10 text-slate-200 hover:border-accent hover:text-white transition"
+          className="px-4 py-2 rounded-full border border-accent/50 text-slate-900 hover:border-accent hover:text-slate-900 transition"
         >
           Vista Wikidata
         </a>
         <a
           href="#declaraciones"
-          className="px-4 py-2 rounded-full border border-white/10 text-slate-200 hover:border-accent hover:text-white transition"
+          className="px-4 py-2 rounded-full border border-magenta/50 text-slate-900 hover:border-magenta hover:text-slate-900 transition"
         >
           Declaraciones (ejemplo)
         </a>
@@ -449,15 +449,15 @@ export default function VictimaPage() {
       />
 
       <section id="lista" className="py-12 md:py-16">
-        <div className="glass rounded-3xl border border-white/5 p-8 md:p-10 halo">
-          <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Lista de propiedades</p>
-          <h2 className="text-3xl font-display font-semibold text-white mt-1">Declaraciones usadas</h2>
-          <p className="text-slate-200 mt-3">
+        <div className="glass rounded-3xl border border-accent/30 p-8 md:p-10 halo">
+          <p className="text-xs uppercase tracking-[0.2em] text-slate-600">Lista de propiedades</p>
+          <h2 className="text-3xl font-display font-semibold text-slate-900 mt-1">Declaraciones usadas</h2>
+          <p className="text-slate-800 mt-3">
             Carga estas propiedades en el ítem. Después, agrega referencias P854 + P1065 + P813 a cada afirmación.
           </p>
           <div className="grid md:grid-cols-2 gap-2 mt-5">
             {declarationList.map((prop) => (
-              <div key={prop} className="flex items-center gap-2 px-3 py-2 rounded-lg border border-white/10 bg-white/5 text-slate-100">
+              <div key={prop} className="flex items-center gap-2 px-3 py-2 rounded-lg border border-accent/25 bg-white text-slate-900">
                 <span className="inline-flex h-2 w-2 rounded-full bg-accent" />
                 <span>{prop}</span>
               </div>
@@ -471,12 +471,12 @@ export default function VictimaPage() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6">
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Ejemplo visual</p>
-              <h2 className="text-3xl font-display font-semibold text-white">Cómo se ve en Wikidata</h2>
-              <p className="text-slate-200 mt-2">
+              <h2 className="text-3xl font-display font-semibold text-slate-900">Cómo se ve en Wikidata</h2>
+              <p className="text-slate-800 mt-2">
                 Añade una propiedad, guarda el valor y luego pulsa “añadir referencia” para cargar P854, P1065 y P813.
               </p>
             </div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 text-sm text-slate-200">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-accent/30 text-sm text-slate-900">
               Coincide con la ficha de la víctima
             </div>
           </div>
@@ -485,16 +485,16 @@ export default function VictimaPage() {
               <StatementCard key={stmt.property} stmt={stmt} />
             ))}
           </div>
-          <div className="mt-6 rounded-2xl border border-white/10 p-5 bg-white/5">
-            <p className="text-sm text-slate-300 mb-2">Fuentes (colócalas en cada referencia)</p>
-            <ul className="list-disc list-inside text-slate-200 text-sm space-y-1">
+          <div className="mt-6 rounded-2xl border border-accent/25 p-5 bg-white">
+            <p className="text-sm text-slate-700 mb-2">Fuentes (colócalas en cada referencia)</p>
+            <ul className="list-disc list-inside text-slate-900 text-sm space-y-1">
               {joseSources.map((src) => (
                 <li key={src}>
                   <a
                     href={src}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-accent hover:text-white"
+                    className="text-wikiblue hover:text-slate-900"
                   >
                     {src}
                   </a>
@@ -509,22 +509,22 @@ export default function VictimaPage() {
       </section> */}
 
       <section id="autos" className="pb-14">
-        <div className="glass rounded-3xl border border-white/5 p-8 md:p-10 halo">
+        <div className="glass rounded-3xl border border-accent/30 p-8 md:p-10 halo">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6">
             <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Autos relacionados</p>
-              <h2 className="text-3xl font-display font-semibold text-white">Fuentes para usar como referencia</h2>
-              <p className="text-slate-200 mt-2">
+              <p className="text-xs uppercase tracking-[0.2em] text-slate-600">Autos relacionados</p>
+              <h2 className="text-3xl font-display font-semibold text-slate-900">Fuentes para usar como referencia</h2>
+              <p className="text-slate-800 mt-2">
                 Copia las URLs oficiales y sus versiones en archive.org. Si no tienes aún un enlace, déjalo en blanco y actualiza cuando esté disponible.
               </p>
             </div>
-            <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-white/10 text-sm text-slate-200">
+            <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-magenta/40 text-sm text-slate-900">
               Botón de copiar en cada enlace
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-white/10 ion-panel">
-            <table className="ion-table">
+          <div className="overflow-hidden rounded-2xl border border-rojo/40 ion-panel">
+            <table className="ion-table table-fixed w-full">
               <thead>
                 <tr>
                   <th>Auto</th>
@@ -535,17 +535,21 @@ export default function VictimaPage() {
               <tbody>
                 {autosJudiciales.map((auto) => (
                   <tr key={auto.nombre}>
-                    <td className="text-white font-semibold">{auto.nombre}</td>
-                    <td className="text-slate-200 space-y-1">
-                      <div className="flex items-center gap-2">
-                        <span className="flex-1 break-words">{auto.jep || "—"}</span>
-                        <CopyButton text={auto.jep} />
+                    <td className="text-slate-900 font-semibold pr-4">{auto.nombre}</td>
+                    <td className="text-slate-900 space-y-1 pr-4">
+                      <div className="flex items-start gap-2">
+                        <span className="flex-1 break-all text-xs min-h-[20px]">{auto.jep || "—"}</span>
+                        <div className="flex-shrink-0">
+                          <CopyButton text={auto.jep} />
+                        </div>
                       </div>
                     </td>
-                    <td className="text-slate-200 space-y-1">
-                      <div className="flex items-center gap-2">
-                        <span className="flex-1 break-words">{auto.archivo || "—"}</span>
-                        <CopyButton text={auto.archivo} />
+                    <td className="text-slate-900 space-y-1">
+                      <div className="flex items-start gap-2">
+                        <span className="flex-1 break-all text-xs min-h-[20px]">{auto.archivo || "—"}</span>
+                        <div className="flex-shrink-0">
+                          <CopyButton text={auto.archivo} />
+                        </div>
                       </div>
                     </td>
                   </tr>

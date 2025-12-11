@@ -13,10 +13,13 @@ module.exports = {
       colors: {
         night: "#0b1021",
         ink: "#0f172a",
-        accent: "#0f66b2", // azul
-        magenta: "#5942b0", // morado
-        verde: "#226b4a",
-        rojo: "#920000",
+        accent: "#0077a6", // azul wikimedia
+        magenta: "#a2001d", // reutilizado como rojo wikimedia
+        verde: "#4b9e6a",
+        rojo: "#a2001d",
+        wikiblue: "#0077a6",
+        wikigreen: "#4b9e6a",
+        wikired: "#a2001d",
       },
       boxShadow: {
         glow: "0 15px 60px rgba(93, 224, 230, 0.25)",

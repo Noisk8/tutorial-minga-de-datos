@@ -12,11 +12,13 @@
 body {
   @apply text-slate-900 font-body;
   background-color: #f7f8fb;
-  background-image:
-    radial-gradient(circle at 18% 20%, rgba(15, 102, 178, 0.12), transparent 30%),
-    radial-gradient(circle at 78% 10%, rgba(89, 66, 176, 0.08), transparent 28%),
-    linear-gradient(135deg, #ffffff 0%, #f1f4fb 40%, #ffffff 100%);
+  /* background-image:
+    radial-gradient(circle at 16% 18%, rgba(75, 158, 106, 0.12), transparent 28%),
+    radial-gradient(circle at 84% 18%, rgba(162, 0, 29, 0.1), transparent 28%),
+    radial-gradient(circle at 50% 68%, rgba(0, 119, 166, 0.12), transparent 30%),
+    linear-gradient(135deg, #ffffff 0%, #f2f5fb 45%, #ffffff 100%); */
   min-height: 100vh;
+  color: #0a0a0a;
 }
 
 ::selection {
@@ -25,14 +27,10 @@ body {
 }
 
 .glass {
-  background: radial-gradient(circle at 20% 20%, rgba(15, 102, 178, 0.14), transparent 35%),
-    radial-gradient(circle at 80% 30%, rgba(89, 66, 176, 0.12), transparent 38%),
-    linear-gradient(135deg, #0f172a 0%, #0c1220 100%);
-  border: 1px solid rgba(15, 102, 178, 0.35);
-  box-shadow:
-    0 18px 45px rgba(15, 102, 178, 0.22),
-    0 10px 30px rgba(89, 66, 176, 0.16);
-  backdrop-filter: blur(16px);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: none;
+  color: #0f172a;
 }
 
 .halo {
@@ -44,9 +42,8 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 30%, rgba(93, 224, 230, 0.25), transparent 30%),
-    radial-gradient(circle at 80% 60%, rgba(255, 77, 121, 0.18), transparent 25%);
-  opacity: 0.7;
+  background: none;
+  opacity: 1;
   pointer-events: none;
 }
 
@@ -65,28 +62,23 @@ body {
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
 
-.mockup {
-  background: linear-gradient(135deg, rgba(15, 102, 178, 0.18), rgba(89, 66, 176, 0.16));
-  border: 1px dashed rgba(15, 102, 178, 0.35);
-}
-
 .ion-panel {
-  background: #0d1424;
-  border: 1px solid rgba(15, 102, 178, 0.35);
+
+  border: 1px solid rgba(162, 0, 29, 0.1);
   box-shadow:
-    0 12px 30px rgba(15, 102, 178, 0.25),
-    0 0 0 1px rgba(89, 66, 176, 0.18);
+    0 10px 22px rgba(15, 102, 178, 0.12),
+    0 0 0 1px rgba(162, 0, 29, 0.1);
 }
 
 .ion-table {
   width: 100%;
   border-collapse: collapse;
-  color: #e2e8f0;
-  font-size: 0.95rem;
+  color: #0f172a;
+  font-size: 0.9rem;
 }
 
 .ion-table thead {
-  background: linear-gradient(135deg, rgba(15, 102, 178, 0.28), rgba(89, 66, 176, 0.18));
+
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.75rem;
@@ -94,13 +86,14 @@ body {
 
 .ion-table th,
 .ion-table td {
-  border: 1px solid rgba(15, 102, 178, 0.25);
+  border: 1px solid rgba(0, 119, 166, 0.24);
   padding: 12px 14px;
   vertical-align: top;
+  line-height: 1.4;
 }
 
 .ion-table tbody tr:nth-child(odd) {
-  background: rgba(15, 102, 178, 0.05);
+  background: rgba(162, 0, 29, 0.1);
 }
 
 code {
