@@ -7,22 +7,22 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["'Space Grotesk'", "system-ui", "sans-serif"],
-        body: ["'Inter'", "system-ui", "sans-serif"],
+        display: ["Georgia", "serif"],
+        body: ["'Courier New'", "Courier", "monospace"],
+        mono: ["'Courier New'", "Courier", "monospace"],
       },
       colors: {
-        night: "#0b1021",
-        ink: "#0f172a",
-        accent: "#0077a6", // azul wikimedia
-        magenta: "#a2001d", // reutilizado como rojo wikimedia
-        verde: "#4b9e6a",
-        rojo: "#a2001d",
-        wikiblue: "#0077a6",
-        wikigreen: "#4b9e6a",
-        wikired: "#a2001d",
+        // Official Wikimedia color palette from logo
+        wikiblue: "#006699",       // Main blue from logo
+        wikibluehover: "#004466",  // Darker blue for hover
+        wikigreen: "#339966",      // Green from logo center
+        wikired: "#990000",        // Red from logo top
+        wikigray: "#A2A9B1",       // Border gray (standard)
+        wikidark: "#202122",       // Text dark gray (standard)
+        wikilight: "#F8F9FA",      // Light background (standard)
       },
       boxShadow: {
-        glow: "0 15px 60px rgba(93, 224, 230, 0.25)",
+        wiki: "0 1px 1px rgba(0,0,0,0.05)",
       },
     },
   },

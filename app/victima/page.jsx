@@ -9,7 +9,7 @@ const personaSteps = [
     detail:
       "Pulsa “Crear un nuevo ítem” en Wikidata. Completa etiqueta, descripción y alias antes de guardar.",
     actions: [
-      "Etiqueta (ES): José Leonardo Hernández. Alias opcional: 'José L. Hernández'.",
+      "Etiqueta (ES): Nombre . Alias opcional: 'José L. Hernández'.",
       "Descripción (ES): persona asesinada en Colombia en el contexto de “falsos positivos” o ejecuciones extrajudiciales.",
       "Repite descripción en EN, PT-BR, FR (ver tabla abajo).",
       "Guarda el ítem para habilitar las declaraciones.",
@@ -23,6 +23,7 @@ const personaSteps = [
       "P31 instancia de → ser humano (Q5).",
       "P21 sexo o género → masculino.",
       "P27 país de nacionalidad → Colombia (Q739).",
+      "(opcional) P106 ocupación → agricultor (Q12737077).",
       "P570 fecha de fallecimiento → 19 dic 2007.",
       "P20 lugar de fallecimiento → El Pital (Huila, Colombia).",
       "En cada fila: P854 (URL), P1065 (archivo), P813 (fecha de consulta).",
@@ -47,48 +48,48 @@ const personaSteps = [
 const languageRows = [
   {
     idioma: "valores predeterminados",
-    etiqueta: "José Leonardo Hernández",
+    etiqueta: "Nombre ",
     descripcion: "–",
     alias: "—",
   },
   {
     idioma: "español",
-    etiqueta: "José Leonardo Hernández",
+    etiqueta: "Nombre ",
     descripcion:
       'persona asesinada en Colombia en el contexto de "falsos positivos" o ejecuciones extrajudiciales',
     alias: "—",
   },
   {
     idioma: "inglés",
-    etiqueta: "José Leonardo Hernández",
+    etiqueta: "Nombre ",
     descripcion:
       "person killed in Colombia in the context of the 'false positives scandal' or extrajudicial executions",
     alias: "—",
   },
   {
     idioma: "portugués de Brasil",
-    etiqueta: "José Leonardo Hernández",
+    etiqueta: "Nombre ",
     descripcion:
       "pessoa morta na Colômbia no contexto de “falsos positivos” ou execuções extrajudiciais",
     alias: "—",
   },
   {
     idioma: "francés",
-    etiqueta: "José Leonardo Hernández",
+    etiqueta: "Nombre ",
     descripcion:
       "personne tuée en Colombie dans le cadre de “faux positifs” ou d'exécutions extrajudiciaires",
     alias: "—",
   },
   {
     idioma: "italiano",
-    etiqueta: "José Leonardo Hernández",
+    etiqueta: "Nombre ",
     descripcion:
       "persona uccisa in Colombia nel contesto dei “falsi positivi” o di esecuzioni extragiudiziali",
     alias: "—",
   },
   {
     idioma: "wayuunaiki (wayuu)",
-    etiqueta: "José Leonardo Hernández",
+    etiqueta: "Nombre ",
     descripcion:
       "persona asesinada en Colombia en el contexto de “falsos positivos” o ejecuciones extrajudiciales",
     alias: "—",
@@ -232,7 +233,7 @@ function CopyButton({ text }) {
       onClick={handleCopy}
       disabled={!text}
       className={`text-[11px] px-3 py-1 rounded-full border ${
-        text ? "border-accent/40 text-slate-900 hover:border-accent" : "border-accent/20 text-slate-500 cursor-not-allowed"
+        text ? "border-wikired/40 text-slate-900 hover:border-wikired" : "border-wikired/20 text-slate-500 cursor-not-allowed"
       } transition bg-white`}
     >
       {copied ? "☑️ Copiado" : "Copiar"}
@@ -244,9 +245,9 @@ function StatementCard({ stmt }) {
   return (
     <div className="rounded-2xl border border-white/10 overflow-hidden ion-panel">
       <div className="grid md:grid-cols-[260px_1fr]">
-        <div className="bg-white border-b md:border-b-0 md:border-r border-accent/25 p-4 md:p-5">
+        <div className="bg-white border-b md:border-b-0 md:border-r border-wikired/25 p-4 md:p-5">
           <p className="text-slate-600 text-sm">Propiedad</p>
-          <p className="text-lg font-semibold text-accent">{stmt.property}</p>
+          <p className="text-lg font-semibold text-wikired">{stmt.property}</p>
         </div>
         <div className="p-4 md:p-5 space-y-3">
           <div>
@@ -257,7 +258,7 @@ function StatementCard({ stmt }) {
             )}
           </div>
           {stmt.references && (
-            <div className="bg-white border border-accent/25 rounded-xl p-3">
+            <div className="bg-white border border-wikired/25 rounded-xl p-3">
               <p className="text-xs uppercase tracking-[0.18em] text-slate-600 mb-2">Referencias (añadir en la UI)</p>
               <ul className="text-sm text-slate-800 space-y-1">
                 <li>P854 dirección web de la referencia → URL oficial</li>
@@ -280,8 +281,8 @@ function StepSection({ id, title, steps, afterFirst }) {
           <p className="text-sm uppercase tracking-[0.18em] text-slate-600">Flujo</p>
           <h2 className="text-3xl md:text-4xl font-display font-semibold text-slate-900">{title}</h2>
         </div>
-        <div className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-accent/40 text-sm text-slate-900">
-          <span className="inline-flex h-2 w-2 rounded-full bg-accent" />
+        <div className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-wikired/40 text-sm text-slate-900">
+          <span className="inline-flex h-2 w-2 rounded-full bg-wikired" />
           3 pasos
         </div>
       </div>
@@ -289,16 +290,16 @@ function StepSection({ id, title, steps, afterFirst }) {
       <div className="grid gap-6">
         {steps.map((step, index) => (
           <div key={step.title} className="space-y-6">
-            <article className="glass card-hover rounded-2xl border border-verde/35 p-6 md:p-8 halo">
+            <article className="glass card-hover rounded-2xl border border-wikigreen/35 p-6 md:p-8 halo">
               <div className="flex flex-col gap-6">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="h-10 w-10 rounded-full border border-verde/50 flex items-center justify-center text-lg font-semibold text-verde bg-white">
+                    <span className="h-10 w-10 rounded-full border border-wikigreen/50 flex items-center justify-center text-lg font-semibold text-wikigreen bg-white">
                       {index + 1}
                     </span>
                     <div>
                       <p className="text-xs uppercase tracking-[0.2em] text-slate-600">
-                        Paso {index + 1}
+                      
                       </p>
                     <h3 className="text-xl font-semibold text-slate-900">{step.title}</h3>
                     </div>
@@ -307,15 +308,15 @@ function StepSection({ id, title, steps, afterFirst }) {
                   {step.actions && (
                     <div className="mt-4">
                       <p className="text-xs uppercase tracking-[0.2em] text-slate-600 mb-2">
-                        Paso a paso
+               
                       </p>
                       <ul className="grid gap-2 text-sm text-slate-800">
                         {step.actions.map((action) => (
                           <li
                             key={action}
-                            className="flex gap-2 items-start rounded-lg border border-accent/25 bg-white px-3 py-2"
+                            className="flex gap-2 items-start rounded-lg border border-wikired/25 bg-white px-3 py-2"
                           >
-                            <span className="mt-0.5 inline-flex h-2.5 w-2.5 rounded-full bg-verde" />
+                            <span className="mt-0.5 inline-flex h-2.5 w-2.5 rounded-full bg-wikigreen" />
                             <span className="leading-relaxed">{action}</span>
                           </li>
                         ))}
@@ -336,7 +337,7 @@ function StepSection({ id, title, steps, afterFirst }) {
 
 function VistaTable() {
   return (
-    <div className="glass rounded-3xl border border-accent/30 p-8 md:p-10 halo">
+    <div className="glass rounded-3xl border border-wikired/30 p-8 md:p-10 halo">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6">
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-slate-600">Vista tipo Wikidata</p>
@@ -345,11 +346,11 @@ function VistaTable() {
             Abre “En más idiomas” → agrega etiqueta y descripción. Usa esta tabla como guía.
           </p>
         </div>
-        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-accent/30 text-sm text-slate-800">
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-wikired/30 text-sm text-slate-800">
           Q137342677
         </span>
       </div>
-          <div className="overflow-hidden rounded-2xl border border-accent/30 ion-panel">
+          <div className="overflow-hidden rounded-2xl border border-wikired/30 ion-panel">
             <table className="ion-table">
           <thead>
             <tr>
@@ -383,10 +384,10 @@ function VistaTable() {
 export default function VictimaPage() {
   return (
     <main className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-14 text-slate-900">
-      <header className="glass rounded-3xl border border-accent/30 p-8 md:p-12 halo">
+      <header className="glass rounded-3xl border border-wikired/30 p-8 md:p-12 halo">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/30 text-xs uppercase tracking-[0.2em] text-slate-700">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-wikired/30 text-xs uppercase tracking-[0.2em] text-slate-700">
               Tutorial de víctima
             </div>
             <h1 className="text-4xl md:text-5xl font-display font-semibold text-slate-900 leading-tight">
@@ -398,7 +399,7 @@ export default function VictimaPage() {
             <div className="flex flex-wrap gap-3">
               <a
                 href="/"
-                className="inline-flex items-center gap-2 border border-accent/40 text-slate-900 px-5 py-3 rounded-full hover:border-accent transition"
+                className="inline-flex items-center gap-2 border border-wikired/40 text-slate-900 px-5 py-3 rounded-full hover:border-wikired transition"
               >
                 ← Volver al home
               </a>
@@ -417,25 +418,25 @@ export default function VictimaPage() {
       <nav className="flex flex-wrap items-center gap-3 mt-8">
         <a
           href="#pasos"
-          className="px-4 py-2 rounded-full border border-verde/50 text-slate-900 hover:border-verde hover:text-slate-900 transition"
+          className="px-4 py-2 rounded-full border border-wikigreen/50 text-slate-900 hover:border-wikigreen hover:text-slate-900 transition"
         >
           Pasos
         </a>
         <a
           href="#lista"
-          className="px-4 py-2 rounded-full border border-rojo/50 text-slate-900 hover:border-rojo hover:text-slate-900 transition"
+          className="px-4 py-2 rounded-full border border-wikired/50 text-slate-900 hover:border-wikired hover:text-slate-900 transition"
         >
           Lista de declaraciones
         </a>
         <a
           href="#vista"
-          className="px-4 py-2 rounded-full border border-accent/50 text-slate-900 hover:border-accent hover:text-slate-900 transition"
+          className="px-4 py-2 rounded-full border border-wikired/50 text-slate-900 hover:border-wikired hover:text-slate-900 transition"
         >
           Vista Wikidata
         </a>
         <a
           href="#declaraciones"
-          className="px-4 py-2 rounded-full border border-magenta/50 text-slate-900 hover:border-magenta hover:text-slate-900 transition"
+          className="px-4 py-2 rounded-full border border-wikired/50 text-slate-900 hover:border-wikired hover:text-slate-900 transition"
         >
           Declaraciones (ejemplo)
         </a>
@@ -449,16 +450,16 @@ export default function VictimaPage() {
       />
 
       <section id="lista" className="py-12 md:py-16">
-        <div className="glass rounded-3xl border border-accent/30 p-8 md:p-10 halo">
-          <p className="text-xs uppercase tracking-[0.2em] text-slate-600">Lista de propiedades</p>
+        <div className="glass rounded-3xl border border-wikired/30 p-8 md:p-10 halo">
+          <p className="text-xs uppercase tracking-[0.2em] text-slate-600">Statements</p>
           <h2 className="text-3xl font-display font-semibold text-slate-900 mt-1">Declaraciones usadas</h2>
           <p className="text-slate-800 mt-3">
             Carga estas propiedades en el ítem. Después, agrega referencias P854 + P1065 + P813 a cada afirmación.
           </p>
           <div className="grid md:grid-cols-2 gap-2 mt-5">
             {declarationList.map((prop) => (
-              <div key={prop} className="flex items-center gap-2 px-3 py-2 rounded-lg border border-accent/25 bg-white text-slate-900">
-                <span className="inline-flex h-2 w-2 rounded-full bg-accent" />
+              <div key={prop} className="flex items-center gap-2 px-3 py-2 rounded-lg border border-wikired/25 bg-white text-slate-900">
+                <span className="inline-flex h-2 w-2 rounded-full bg-wikired" />
                 <span>{prop}</span>
               </div>
             ))}
@@ -476,7 +477,7 @@ export default function VictimaPage() {
                 Añade una propiedad, guarda el valor y luego pulsa “añadir referencia” para cargar P854, P1065 y P813.
               </p>
             </div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-accent/30 text-sm text-slate-900">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-wikired/30 text-sm text-slate-900">
               Coincide con la ficha de la víctima
             </div>
           </div>
@@ -485,7 +486,7 @@ export default function VictimaPage() {
               <StatementCard key={stmt.property} stmt={stmt} />
             ))}
           </div>
-          <div className="mt-6 rounded-2xl border border-accent/25 p-5 bg-white">
+          <div className="mt-6 rounded-2xl border border-wikired/25 p-5 bg-white">
             <p className="text-sm text-slate-700 mb-2">Fuentes (colócalas en cada referencia)</p>
             <ul className="list-disc list-inside text-slate-900 text-sm space-y-1">
               {joseSources.map((src) => (
@@ -509,7 +510,7 @@ export default function VictimaPage() {
       </section> */}
 
       <section id="autos" className="pb-14">
-        <div className="glass rounded-3xl border border-accent/30 p-8 md:p-10 halo">
+        <div className="glass rounded-3xl border border-wikired/30 p-8 md:p-10 halo">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6">
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-slate-600">Autos relacionados</p>
@@ -518,12 +519,12 @@ export default function VictimaPage() {
                 Copia las URLs oficiales y sus versiones en archive.org. Si no tienes aún un enlace, déjalo en blanco y actualiza cuando esté disponible.
               </p>
             </div>
-            <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-magenta/40 text-sm text-slate-900">
+            <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-wikired/40 text-sm text-slate-900">
               Botón de copiar en cada enlace
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-rojo/40 ion-panel">
+          <div className="overflow-hidden rounded-2xl border border-wikired/40 ion-panel">
             <table className="ion-table table-fixed w-full">
               <thead>
                 <tr>

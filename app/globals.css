@@ -1,101 +1,181 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   color-scheme: light;
-  background: #f7f8fb;
+  background: #ffffff;
 }
 
 body {
-  @apply text-slate-900 font-body;
-  background-color: #f7f8fb;
-  /* background-image:
-    radial-gradient(circle at 16% 18%, rgba(75, 158, 106, 0.12), transparent 28%),
-    radial-gradient(circle at 84% 18%, rgba(162, 0, 29, 0.1), transparent 28%),
-    radial-gradient(circle at 50% 68%, rgba(0, 119, 166, 0.12), transparent 30%),
-    linear-gradient(135deg, #ffffff 0%, #f2f5fb 45%, #ffffff 100%); */
+  @apply text-wikidark font-body;
+  background-color: #ffffff;
   min-height: 100vh;
-  color: #0a0a0a;
+  color: #202122;
 }
 
 ::selection {
-  background: rgba(93, 224, 230, 0.2);
-  color: #e2e8f0;
+  background: #006699;
+  color: #ffffff;
 }
 
-.glass {
+/* Wikipedia-style links with Wikimedia blue */
+a {
+  color: #006699;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #004466;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Simple card style - no glassmorphism */
+.wiki-card {
   background: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: none;
-  color: #0f172a;
+  border: 1px solid #A2A9B1;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.halo {
-  position: relative;
-  overflow: hidden;
+.wiki-card:hover {
+  border-color: #0645AD;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.halo::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: none;
-  opacity: 1;
-  pointer-events: none;
-}
-
-.halo > * {
-  position: relative;
-  z-index: 1;
-}
-
-.card-hover {
-  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-4px);
-  border-color: rgba(93, 224, 230, 0.3);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-}
-
-.ion-panel {
-
-  border: 1px solid rgba(162, 0, 29, 0.1);
-  box-shadow:
-    0 10px 22px rgba(15, 102, 178, 0.12),
-    0 0 0 1px rgba(162, 0, 29, 0.1);
-}
-
-.ion-table {
+/* Wikipedia-style table */
+.wiki-table {
   width: 100%;
   border-collapse: collapse;
-  color: #0f172a;
-  font-size: 0.9rem;
+  background: #F8F9FA;
+  border: 1px solid #A2A9B1;
+  margin: 1rem 0;
 }
 
-.ion-table thead {
-
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.75rem;
+.wiki-table th {
+  background: #EAECF0;
+  border: 1px solid #A2A9B1;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: bold;
+  font-family: Georgia, serif;
 }
 
-.ion-table th,
-.ion-table td {
-  border: 1px solid rgba(0, 119, 166, 0.24);
-  padding: 12px 14px;
+.wiki-table td {
+  border: 1px solid #A2A9B1;
+  padding: 0.5rem 0.75rem;
   vertical-align: top;
-  line-height: 1.4;
 }
 
-.ion-table tbody tr:nth-child(odd) {
-  background: rgba(162, 0, 29, 0.1);
+.wiki-table tbody tr:hover {
+  background: #F8F9FA;
 }
 
-code {
-  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+/* Wikipedia-style button */
+.wiki-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #F8F9FA;
+  border: 1px solid #A2A9B1;
+  border-radius: 6px;
+  color: #202122;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.wiki-button:hover {
+  background: #ffffff;
+  border-color: #006699;
+  text-decoration: none;
+}
+
+.wiki-button-primary {
+  background: #006699;
+  color: #ffffff;
+  border-color: #006699;
+}
+
+.wiki-button-primary:hover {
+  background: #004466;
+  border-color: #004466;
+}
+
+.wiki-button-green {
+  background: #339966;
+  color: #ffffff;
+  border-color: #339966;
+}
+
+.wiki-button-green:hover {
+  background: #2a7d55;
+  border-color: #2a7d55;
+}
+
+.wiki-button-red {
+  background: #990000;
+  color: #ffffff;
+  border-color: #990000;
+}
+
+.wiki-button-red:hover {
+  background: #770000;
+  border-color: #770000;
+}
+
+/* Code blocks */
+code, pre {
+  font-family: "Courier New", Courier, monospace;
+  background: #F8F9FA;
+  padding: 0.125rem 0.25rem;
+  border: 1px solid #A2A9B1;
+  border-radius: 4px;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, serif;
+  border-bottom: 1px solid #A2A9B1;
+  padding-bottom: 0.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+/* Wikipedia-style notice boxes */
+.wiki-notice {
+  background: #F8F9FA;
+  border-left: 4px solid #006699;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.wiki-notice-success {
+  border-left-color: #339966;
+}
+
+.wiki-notice-warning {
+  border-left-color: #990000;
+  background: #FEF6E7;
 }

@@ -1,4 +1,5 @@
 import "./globals.css";
+import Navbar from "../components/Navbar";
 
 export const metadata = {
   title: "Tutorial: Cómo Crear Ontologías en Wikidata",
@@ -10,6 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body className="antialiased">
+        <Navbar />
         {children}
       </body>
     </html>

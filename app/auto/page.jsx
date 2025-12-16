@@ -135,7 +135,7 @@ function StepSection({ id, title, steps }) {
                   </span>
                   <div>
                     <p className="text-xs uppercase tracking-[0.2em] text-slate-700">
-                      Paso {index + 1}
+                    
                     </p>
                     <h3 className="text-xl font-semibold text-slate-900">{step.title}</h3>
                   </div>
