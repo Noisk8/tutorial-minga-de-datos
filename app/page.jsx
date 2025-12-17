@@ -46,9 +46,7 @@ export default function Page() {
               Minga de Datos
             </h1>
             <p className="font-body text-wikidark leading-relaxed mb-6">
-              Elige el flujo que necesitas. Cada tutorial muestra la lista de declaraciones
-              usadas y un ejemplo visual tal cual se ve en la ficha de Wikidata, con referencias
-              paso a paso para que las añadas manualmente.
+             Esta es un espacio para encontrar tutoriales sobre cómo contribuir a Wikidata con información relevante para la memoria histórica de Colombia. Aquí aprenderás a crear y editar elementos en Wikidata, añadiendo referencias y fuentes confiables para asegurar la veracidad de los datos.
             </p>
 
             {/* How to use box */}

@@ -9,7 +9,7 @@ const personaSteps = [
     detail:
       "Pulsa “Crear un nuevo ítem” en Wikidata. Completa etiqueta, descripción y alias antes de guardar.",
     actions: [
-      "Etiqueta (ES): Nombre . Alias opcional: 'José L. Hernández'.",
+      "Etiqueta (ES): Nombre  'José L. Hernández'  Alias: opcional",
       "Descripción (ES): persona asesinada en Colombia en el contexto de “falsos positivos” o ejecuciones extrajudiciales.",
       "Repite descripción en EN, PT-BR, FR (ver tabla abajo).",
       "Guarda el ítem para habilitar las declaraciones.",
@@ -18,12 +18,12 @@ const personaSteps = [
   },
   {
     title: "Identidad y datos básicos",
-    detail: "Añade primero las propiedades de identidad, lugar y fecha.",
+    detail: "Añade primero las propiedades de identidad, lugar y fecha, recuerda siempre poner las referencias",
     actions: [
       "P31 instancia de → ser humano (Q5).",
       "P21 sexo o género → masculino.",
       "P27 país de nacionalidad → Colombia (Q739).",
-      "(opcional) P106 ocupación → agricultor (Q12737077).",
+      "P106 ocupación → agricultor (Q12737077).(opcional)",
       "P570 fecha de fallecimiento → 19 dic 2007.",
       "P20 lugar de fallecimiento → El Pital (Huila, Colombia).",
       "En cada fila: P854 (URL), P1065 (archivo), P813 (fecha de consulta).",
@@ -39,7 +39,7 @@ const personaSteps = [
       "P793 evento significativo → falsos positivos en Colombia.",
       "P7153 lugar significativo → Región andina de Colombia; calificador P2868 valor de la declaración tiene el rol de → lugar de fallecimiento.",
       "P1343 descrito en la fuente → AUTO SUB D- SUBCASO HUILA-081 de 2023.",
-      "Repite P854 + P1065 + P813 como referencias en cada afirmación.",
+      
     ],
     mockup: "Panel con filas P1196, P157, P793, P7153, P1343 y calificadores visibles.",
   },
@@ -340,7 +340,7 @@ function VistaTable() {
     <div className="glass rounded-3xl border border-wikired/30 p-8 md:p-10 halo">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6">
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-slate-600">Vista tipo Wikidata</p>
+      
           <h2 className="text-3xl font-display font-semibold text-slate-900">Etiquetas y descripciones</h2>
           <p className="text-slate-800 mt-2">
             Abre “En más idiomas” → agrega etiqueta y descripción. Usa esta tabla como guía.
@@ -394,9 +394,13 @@ export default function VictimaPage() {
               Persona 
             </h1>
             <p className="text-lg text-slate-800 leading-relaxed">
-              Guía completa para crear la ontología de una víctima: etiquetas multilingües, lista de declaraciones y ejemplo visual igual a la ficha de Wikidata, con referencias (URL + archivo + fecha de consulta) en cada afirmación.
+              Guía completa para crear la ontología de una víctima: etiquetas multilingües, lista de declaraciones , con referencias (URL + archivo + fecha de consulta) en cada afirmación.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <p> Nuestro documento base donde están la lista de personas con datos a trabajar es el            <a href="https://docs.google.com/spreadsheets/u/2/d/1VvEa5VI9UvmDM9jLSaJNOAxjuuCrk953uBDBmgscO1s/edit?gid=0#gid=0"  target="_blank" className="px-4 py-2 rounded-full border border-wikired/50 text-slate-900 hover:border-wikired hover:text-slate-900 transition">
+        Bases y Ontologías
+          </a> </p>
+ 
+            <div className="flex flex-wrap gap-3 pt-4">
               <a
                 href="/"
                 className="inline-flex items-center gap-2 border border-wikired/40 text-slate-900 px-5 py-3 rounded-full hover:border-wikired transition"
@@ -444,7 +448,7 @@ export default function VictimaPage() {
 
       <StepSection
         id="pasos"
-        title="Flujo para crear la víctima"
+        title="Flujo para crear un elemento en Wikidata"
         steps={personaSteps}
         afterFirst={<VistaTable />}
       />
@@ -456,6 +460,8 @@ export default function VictimaPage() {
           <p className="text-slate-800 mt-3">
             Carga estas propiedades en el ítem. Después, agrega referencias P854 + P1065 + P813 a cada afirmación.
           </p>
+
+
           <div className="grid md:grid-cols-2 gap-2 mt-5">
             {declarationList.map((prop) => (
               <div key={prop} className="flex items-center gap-2 px-3 py-2 rounded-lg border border-wikired/25 bg-white text-slate-900">
