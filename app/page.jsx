@@ -120,13 +120,6 @@ export default function Page() {
           );
         })}
       </div>
-
-      {/* Footer info */}
-      <div className="mt-12 border-t border-wikigray pt-6">
-        <p className="font-body text-wikigray text-sm text-center">
-          Tutorial creado por Wikimedia Colombia para el Colaboratorio de Memoria Histórica
-        </p>
-      </div>
     </main>
   );
 }
