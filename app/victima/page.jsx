@@ -91,7 +91,7 @@ const languageRows = [
     idioma: "wayuunaiki (wayuu)",
     etiqueta: "Nombre ",
     descripcion:
-      "persona asesinada en Colombia en el contexto de “falsos positivos” o ejecuciones extrajudiciales",
+      "wayuu asiruushi kolompiapünaa sü'ütnaa atkawaa ''nnojotka shiimüin jo alaaka'' otta womüyuwaa.",
     alias: "—",
   },
 ];

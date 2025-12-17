@@ -64,16 +64,12 @@ const autoSources = [
 ];
 
 const autoStatements = [
-  { property: "instancia de (P31)", value: "documento legal (Q11032)", references: true },
+  { property: "instancia de (P31)", value: "auto judicial(Q696617)", references: true },
   { property: "título oficial (P1476)", value: "Auto SRVR-SUB-D Subcaso Huila-081", references: true },
+  { property: "autor (P2093)", value: "Jurisdicción Especial para la Paz (Q51881311)", references: true },
   { property: "fecha de publicación (P577)", value: "20 nov 2023", references: true },
-  { property: "jurisdicción (P1001)", value: "Colombia (Q739)", references: true },
-  { property: "ubicación administrativa (P131)", value: "Huila, Colombia", references: true },
-  { property: "citado en (P1343)", value: "Proceso SRVR-SUB-D Subcaso Huila-081", references: true },
-  { property: "cita (P6864)", value: "Artículos de la norma aplicable", references: true },
-  { property: "regula (P4510)", value: "Víctimas del caso Huila-081", references: true },
-  { property: "basado en (P144)", value: "Expediente o sentencia previa", references: true },
-  { property: "causa de (P828)", value: "Medidas de reparación/seguimiento", references: true },
+  { property: "idioma(P407)", value: "español (Q1321)", references: true },
+  
 ];
 
 const autoDeclarationList = autoStatements.map((s) => s.property);
