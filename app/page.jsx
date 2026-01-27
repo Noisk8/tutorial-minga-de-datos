@@ -28,6 +28,15 @@ const tutorials = [
       "Modela el auto como documento legal: etiqueta con número y sala, fechas, jurisdicción y artículos citados, cada uno con fuentes y versión archivada.",
     properties: ["P31", "P577", "P1001", "P131", "P6864", "P1343"],
   },
+  {
+    title: "Buenas Prácticas",
+    href: "/buenas-practicas",
+    tag: "Guía",
+    color: "green",
+    summary:
+      "Desde Wikimedia Colombia pensamos en las buenas prácticas y en el cuidado. Conoce nuestra guía para el Colaboratorio de Memoria Histórica.",
+    properties: ["PDF", "Guía", "Memoria"],
+  },
 ];
 
 export default function Page() {
@@ -74,7 +83,7 @@ export default function Page() {
       </div>
 
       {/* Tutorials Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 gap-6">
         {tutorials.map((tutorial) => {
           const borderColor = 
             tutorial.color === "red" ? "border-l-4 border-l-wikired" :

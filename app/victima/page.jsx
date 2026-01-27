@@ -188,12 +188,12 @@ const autosJudiciales = [
   {
     nombre: "Auto 055 Subsala D de 2022",
     jep: "",
-    archivo: "",
+    archivo: "https://archive.org/details/auto-srvr-sub-d-subcaso-casanare-055-14-julio-2022",
   },
   {
     nombre: "Auto 062 Subsala D de 2023",
     jep: "",
-    archivo: "",
+    archivo: "https://archive.org/details/estado-no.-1014.2023-srvr-caso-03-auto-sub-d-subcaso-antioquia-062-de-2023",
   },
   {
     nombre: "Auto 081 Subsala D de 2023",
@@ -203,12 +203,12 @@ const autosJudiciales = [
   {
     nombre: "Auto SUB D – Subcaso Antioquia – 005 de 2025",
     jep: "",
-    archivo: "",
+    archivo: "https://archive.org/details/auto-srvr-005-sub-d-subcaso-antioquia-caso-03-14-febrero-2025",
   },
   {
     nombre: "Auto Subcaso Meta de 2025",
     jep: "",
-    archivo: "",
+    archivo: "https://archive.org/details/auto-srvr-sub-d-subcaso-casanare-018-27-junio-2025",
   },
 ];
 
@@ -396,9 +396,10 @@ export default function VictimaPage() {
             <p className="text-lg text-slate-800 leading-relaxed">
               Guía completa para crear la ontología de una víctima: etiquetas multilingües, lista de declaraciones , con referencias (URL + archivo + fecha de consulta) en cada afirmación.
             </p>
-            <p> Nuestro documento base donde están la lista de personas con datos a trabajar es el            <a href="https://docs.google.com/spreadsheets/u/2/d/1VvEa5VI9UvmDM9jLSaJNOAxjuuCrk953uBDBmgscO1s/edit?gid=0#gid=0"  target="_blank" className="px-4 py-2 rounded-full border border-wikired/50 text-slate-900 hover:border-wikired hover:text-slate-900 transition">
+            <p> Nuestro documento base donde están la lista de personas con datos a trabajar es el siguiente:</p>
+            <a href="https://docs.google.com/spreadsheets/u/2/d/1VvEa5VI9UvmDM9jLSaJNOAxjuuCrk953uBDBmgscO1s/edit?gid=0#gid=0"  target="_blank" className="inline-block px-5 py-2.5 rounded-full border border-wikired/50 text-slate-900 hover:border-wikired hover:text-slate-900 transition font-medium">
         Bases y Ontologías
-          </a> </p>
+          </a>
  
             <div className="flex flex-wrap gap-3 pt-4">
               <a
