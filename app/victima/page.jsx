@@ -172,27 +172,27 @@ const autosJudiciales = [
   },
   {
     nombre: "Auto 125 de 2021",
-    jep: "",
+    jep: "https://relatoria.jep.gov.co//documentos/providencias/1/1/Auto_SRVR-125_02-julio-2021.docx",
     archivo: "",
   },
   {
     nombre: "Auto 128 de 2021",
-    jep: "",
+    jep: "https://relatoria.jep.gov.co//documentos/providencias/1/1/Auto_SRVR-128_07-julio-2021.docx",
     archivo: "",
   },
   {
     nombre: "Auto 01 de 2022 (Subsala D y F)",
-    jep: "",
+    jep: "https://relatoria.jep.gov.co//documentos/providencias/1/1/Auto_SRVR-01_11-julio-2022.pdf",
     archivo: "",
   },
   {
     nombre: "Auto 055 Subsala D de 2022",
-    jep: "",
+    jep: "https://relatoria.jep.gov.co//documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-CASANARE-055_14-julio-2022.pdf",
     archivo: "https://archive.org/details/auto-srvr-sub-d-subcaso-casanare-055-14-julio-2022",
   },
   {
     nombre: "Auto 062 Subsala D de 2023",
-    jep: "",
+    jep: "https://relatoria.jep.gov.co//documentos/providencias/1/1/Auto_SRVR-SUB-D-062_30-agosto-2023.pdf",
     archivo: "https://archive.org/details/estado-no.-1014.2023-srvr-caso-03-auto-sub-d-subcaso-antioquia-062-de-2023",
   },
   {
@@ -202,7 +202,7 @@ const autosJudiciales = [
   },
   {
     nombre: "Auto SUB D – Subcaso Antioquia – 005 de 2025",
-    jep: "",
+    jep: "https://relatoria.jep.gov.co//documentos/providencias/1/1/Auto_SRVR-005-SUB-D-SUBCASO-ANTIOQUIA-CASO-03_14-febrero-2025.pdf",
     archivo: "https://archive.org/details/auto-srvr-005-sub-d-subcaso-antioquia-caso-03-14-febrero-2025",
   },
   {
