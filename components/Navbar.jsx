@@ -8,10 +8,10 @@ export default function Navbar() {
     const pathname = usePathname();
 
     const navItems = [
-        { href: "/", label: "Inicio" },
-        { href: "/victima", label: "Persona Víctima" },
-        { href: "/auto", label: "Auto Judicial" },
+        { href: "/victima", label: "Ontología Persona" },
+        { href: "/auto", label: "Auto" },
         { href: "/quickstatements", label: "QuickStatements" },
+        { href: "/buenas-practicas", label: "Buenas Prácticas" },
     ];
 
     return (

@@ -7,7 +7,7 @@ const personaSteps = [
   {
     title: "Crear el ítem",
     detail:
-      "Pulsa “Crear un nuevo ítem” en Wikidata. Completa etiqueta, descripción y alias antes de guardar.",
+      <>Pulsa “<a href="https://www.wikidata.org/wiki/Special:NewItem" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Crear un nuevo ítem</a>” en Wikidata. Completa etiqueta, descripción y alias antes de guardar.</>,
     actions: [
       "Etiqueta (ES): Nombre  'José L. Hernández'  Alias: opcional",
       "Descripción (ES): persona asesinada en Colombia en el contexto de “falsos positivos” o ejecuciones extrajudiciales.",
@@ -20,26 +20,26 @@ const personaSteps = [
     title: "Identidad y datos básicos",
     detail: "Añade primero las propiedades de identidad, lugar y fecha, recuerda siempre poner las referencias",
     actions: [
-      "P31 instancia de → ser humano (Q5).",
-      "P21 sexo o género → masculino.",
-      "P27 país de nacionalidad → Colombia (Q739).",
-      "P106 ocupación → agricultor (Q12737077).(opcional)",
-      "P570 fecha de fallecimiento → 19 dic 2007.",
-      "P20 lugar de fallecimiento → El Pital (Huila, Colombia).",
-      "En cada fila: P854 (URL), P1065 (archivo), P813 (fecha de consulta).",
+      <>Instancia de (<a href="https://www.wikidata.org/wiki/Property:P31" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P31</a>) → ser humano (<a href="https://www.wikidata.org/wiki/Q5" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Q5</a>)</>,
+      <>Sexo o género (<a href="https://www.wikidata.org/wiki/Property:P21" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P21</a>) → masculino (<a href="https://www.wikidata.org/wiki/Q6581097" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Q6581097</a>)</>,
+      <>País de nacionalidad (<a href="https://www.wikidata.org/wiki/Property:P27" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P27</a>) → Colombia (<a href="https://www.wikidata.org/wiki/Q739" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Q739</a>)</>,
+      <>Ocupación (<a href="https://www.wikidata.org/wiki/Property:P106" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P106</a>) → agricultor (<a href="https://www.wikidata.org/wiki/Q12737077" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Q12737077</a>). (Si existe)</>,
+      <>Fecha de fallecimiento (<a href="https://www.wikidata.org/wiki/Property:P570" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P570</a>) → 19 dic 2007</>,
+      <>Lugar de fallecimiento (<a href="https://www.wikidata.org/wiki/Property:P20" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P20</a>) → El Pital (Huila)</>,
+      "En cada Declaración: Agrega las dos referencias, una como dirección web y la de archive como archivo",
     ],
     mockup: "Lista de propiedades básicas con columna de referencias completa.",
   },
   {
-    title: "Contexto de victimización",
+    title: "Contexto del suceso",
     detail: "Refuerza el caso con evento, responsables y fuente judicial.",
     actions: [
-      "P1196 circunstancias de la muerte → homicidio.",
-      "P157 asesinado por → Ejército Nacional de Colombia; calificador P1932 citado como → “Catapulta 4 del Batallón de Infantería No. 26 ‘Cacique Pigoanza’ (BIPIG)”.",
-      "P793 evento significativo → falsos positivos en Colombia.",
-      "P7153 lugar significativo → Región andina de Colombia; calificador P2868 valor de la declaración tiene el rol de → lugar de fallecimiento.",
-      "P1343 descrito en la fuente → AUTO SUB D- SUBCASO HUILA-081 de 2023.",
-      
+      <>Circunstancias de la muerte (<a href="https://www.wikidata.org/wiki/Property:P1196" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P1196</a>) → homicidio (<a href="https://www.wikidata.org/wiki/Q149086" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Q149086</a>).</>,
+      <>Asesinado por (<a href="https://www.wikidata.org/wiki/Property:P157" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P157</a>) → Ejército Nacional de Colombia; calificador <a href="https://www.wikidata.org/wiki/Property:P1932" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P1932</a> citado como → “Catapulta 4 del Batallón de Infantería No. 26 ‘Cacique Pigoanza’ (BIPIG)”.</>,
+      <>Evento significativo (<a href="https://www.wikidata.org/wiki/Property:P793" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P793</a>) → falsos positivos en Colombia.</>,
+      <>Lugar significativo (<a href="https://www.wikidata.org/wiki/Property:P7153" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P7153</a>) → Región andina de Colombia; calificador <a href="https://www.wikidata.org/wiki/Property:P2868" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P2868</a> valor de la declaración tiene el rol de → lugar de fallecimiento.</>,
+      <>Descrito en la fuente (<a href="https://www.wikidata.org/wiki/Property:P1343" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P1343</a>) → AUTO SUB D- SUBCASO HUILA-081 de 2023.</>,
+
     ],
     mockup: "Panel con filas P1196, P157, P793, P7153, P1343 y calificadores visibles.",
   },
@@ -96,62 +96,57 @@ const languageRows = [
   },
 ];
 
-const joseSources = [
-  "https://relatoria.jep.gov.co//documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-HUILA-081_20-noviembre-2023.pdf",
-  "https://archive.org/details/auto-srvr-sub-d-subcaso-huila-081-20-noviembre-2023",
-];
 
 const joseStatements = [
   {
-    property: "instancia de (P31)",
-    value: "ser humano (Q5)",
+    property: <>instancia de (<a href="https://www.wikidata.org/wiki/Property:P31" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P31</a>)</>,
+    value: <>ser humano (<a href="https://www.wikidata.org/wiki/Q5" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Q5</a>)</>,
     references: true,
   },
   {
-    property: "sexo o género (P21)",
-    value: "masculino (Q6581097)",
+    property: <>sexo o género (<a href="https://www.wikidata.org/wiki/Property:P21" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P21</a>)</>,
+    value: <>masculino (<a href="https://www.wikidata.org/wiki/Q6581097" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Q6581097</a>)</>,
     references: true,
   },
   {
-    property: "país de nacionalidad (P27)",
-    value: "Colombia (Q739)",
+    property: <>país de nacionalidad (<a href="https://www.wikidata.org/wiki/Property:P27" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P27</a>)</>,
+    value: <>Colombia (<a href="https://www.wikidata.org/wiki/Q739" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Q739</a>)</>,
     references: true,
   },
   {
-    property: "fecha de fallecimiento (P570)",
+    property: <>fecha de fallecimiento (<a href="https://www.wikidata.org/wiki/Property:P570" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P570</a>)</>,
     value: "19 dic 2007",
     references: true,
   },
   {
-    property: "lugar de fallecimiento (P20)",
+    property: <>lugar de fallecimiento (<a href="https://www.wikidata.org/wiki/Property:P20" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P20</a>)</>,
     value: "El Pital, Huila, Colombia",
     references: true,
   },
   {
-    property: "circunstancias de la muerte (P1196)",
-    value: "homicidio (Q149086)",
+    property: <>circunstancias de la muerte (<a href="https://www.wikidata.org/wiki/Property:P1196" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P1196</a>)</>,
+    value: <>homicidio (<a href="https://www.wikidata.org/wiki/Q149086" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Q149086</a>)</>,
     references: true,
   },
   {
-    property: "asesinado por (P157)",
+    property: <>asesinado por (<a href="https://www.wikidata.org/wiki/Property:P157" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P157</a>)</>,
     value: "Ejército Nacional de Colombia",
-    qualifier:
-      'citado como (P1932): “Catapulta 4 del Batallón de Infantería No. 26 ‘Cacique Pigoanza’ (BIPIG)”',
+    qualifier: <>citado como (<a href="https://www.wikidata.org/wiki/Property:P1932" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P1932</a>): “Catapulta 4 del Batallón de Infantería No. 26 ‘Cacique Pigoanza’ (BIPIG)”</>,
     references: true,
   },
   {
-    property: "evento significativo (P793)",
+    property: <>evento significativo (<a href="https://www.wikidata.org/wiki/Property:P793" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P793</a>)</>,
     value: "falsos positivos en Colombia (ítem del evento)",
     references: true,
   },
   {
-    property: "lugar significativo (P7153)",
+    property: <>lugar significativo (<a href="https://www.wikidata.org/wiki/Property:P7153" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P7153</a>)</>,
     value: "Región andina de Colombia",
-    qualifier: "valor de la declaración tiene el rol de (P2868): lugar de fallecimiento",
+    qualifier: <>valor de la declaración tiene el rol de (<a href="https://www.wikidata.org/wiki/Property:P2868" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P2868</a>): lugar de fallecimiento</>,
     references: true,
   },
   {
-    property: "descrito en la fuente (P1343)",
+    property: <>descrito en la fuente (<a href="https://www.wikidata.org/wiki/Property:P1343" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P1343</a>)</>,
     value: "AUTO SUB D- SUBCASO HUILA-081 de 2023",
     references: true,
   },
@@ -222,7 +217,7 @@ function CopyButton({ text }) {
       await navigator.clipboard.writeText(text);
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
-    } catch (err) {
+    } catch {
       setCopied(false);
     }
   };
@@ -232,46 +227,14 @@ function CopyButton({ text }) {
       type="button"
       onClick={handleCopy}
       disabled={!text}
-      className={`text-[11px] px-3 py-1 rounded-full border ${
-        text ? "border-wikired/40 text-slate-900 hover:border-wikired" : "border-wikired/20 text-slate-500 cursor-not-allowed"
-      } transition bg-white`}
+      className={`text-[11px] px-3 py-1 rounded-full border ${text ? "border-wikired/40 text-slate-900 hover:border-wikired" : "border-wikired/20 text-slate-500 cursor-not-allowed"
+        } transition bg-white`}
     >
       {copied ? "☑️ Copiado" : "Copiar"}
     </button>
   );
 }
 
-function StatementCard({ stmt }) {
-  return (
-    <div className="rounded-2xl border border-white/10 overflow-hidden ion-panel">
-      <div className="grid md:grid-cols-[260px_1fr]">
-        <div className="bg-white border-b md:border-b-0 md:border-r border-wikired/25 p-4 md:p-5">
-          <p className="text-slate-600 text-sm">Propiedad</p>
-          <p className="text-lg font-semibold text-wikired">{stmt.property}</p>
-        </div>
-        <div className="p-4 md:p-5 space-y-3">
-          <div>
-            <p className="text-slate-600 text-sm">Valor</p>
-            <p className="text-slate-900 font-semibold text-lg leading-relaxed">{stmt.value}</p>
-            {stmt.qualifier && (
-              <p className="text-slate-700 text-sm mt-1">Calificador: {stmt.qualifier}</p>
-            )}
-          </div>
-          {stmt.references && (
-            <div className="bg-white border border-wikired/25 rounded-xl p-3">
-              <p className="text-xs uppercase tracking-[0.18em] text-slate-600 mb-2">Referencias (añadir en la UI)</p>
-              <ul className="text-sm text-slate-800 space-y-1">
-                <li>P854 dirección web de la referencia → URL oficial</li>
-                <li>P1065 dirección web de archivo → enlace de archive.org</li>
-                <li>P813 fecha de consulta → fecha actual al cargar la fuente</li>
-              </ul>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function StepSection({ id, title, steps, afterFirst }) {
   return (
@@ -299,16 +262,16 @@ function StepSection({ id, title, steps, afterFirst }) {
                     </span>
                     <div>
                       <p className="text-xs uppercase tracking-[0.2em] text-slate-600">
-                      
+
                       </p>
-                    <h3 className="text-xl font-semibold text-slate-900">{step.title}</h3>
+                      <h3 className="text-xl font-semibold text-slate-900">{step.title}</h3>
                     </div>
                   </div>
                   <p className="text-slate-800 leading-relaxed">{step.detail}</p>
                   {step.actions && (
                     <div className="mt-4">
                       <p className="text-xs uppercase tracking-[0.2em] text-slate-600 mb-2">
-               
+
                       </p>
                       <ul className="grid gap-2 text-sm text-slate-800">
                         {step.actions.map((action) => (
@@ -340,7 +303,7 @@ function VistaTable() {
     <div className="glass rounded-3xl border border-wikired/30 p-8 md:p-10 halo">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6">
         <div>
-      
+
           <h2 className="text-3xl font-display font-semibold text-slate-900">Etiquetas y descripciones</h2>
           <p className="text-slate-800 mt-2">
             Abre “En más idiomas” → agrega etiqueta y descripción. Usa esta tabla como guía.
@@ -350,11 +313,11 @@ function VistaTable() {
           Q137342677
         </span>
       </div>
-          <div className="overflow-hidden rounded-2xl border border-wikired/30 ion-panel">
-            <table className="ion-table">
+      <div className="overflow-hidden rounded-2xl border border-wikired/30 ion-panel">
+        <table className="ion-table">
           <thead>
             <tr>
-              <th>Idioma</th>
+              <th className="pl-4">Idioma</th>
               <th>Etiqueta</th>
               <th>Descripción</th>
             </tr>
@@ -362,7 +325,7 @@ function VistaTable() {
           <tbody>
             {languageRows.map((row) => (
               <tr key={row.idioma}>
-                <td className="text-slate-800">{row.idioma}</td>
+                <td className="text-slate-800 pl-4">{row.idioma}</td>
                 <td className="text-slate-900 font-semibold">{row.etiqueta}</td>
                 <td className="text-slate-800 leading-relaxed">
                   <div className="flex flex-col gap-2">
@@ -386,21 +349,21 @@ export default function VictimaPage() {
     <main className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-14 text-slate-900">
       <header className="glass rounded-3xl border border-wikired/30 p-8 md:p-12 halo">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-          <div className="max-w-3xl space-y-4">
+          <div className="flex-1 space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-wikired/30 text-xs uppercase tracking-[0.2em] text-slate-700">
               Tutorial de víctima
             </div>
             <h1 className="text-4xl md:text-5xl font-display font-semibold text-slate-900 leading-tight">
-              Persona 
+              Persona
             </h1>
             <p className="text-lg text-slate-800 leading-relaxed">
               Guía completa para crear la ontología de una víctima: etiquetas multilingües, lista de declaraciones , con referencias (URL + archivo + fecha de consulta) en cada afirmación.
             </p>
             <p> Nuestro documento base donde están la lista de personas con datos a trabajar es el siguiente:</p>
-            <a href="https://docs.google.com/spreadsheets/u/2/d/1VvEa5VI9UvmDM9jLSaJNOAxjuuCrk953uBDBmgscO1s/edit?gid=0#gid=0"  target="_blank" className="inline-block px-5 py-2.5 rounded-full border border-wikired/50 text-slate-900 hover:border-wikired hover:text-slate-900 transition font-medium">
-        Bases y Ontologías
-          </a>
- 
+            <a href="https://docs.google.com/spreadsheets/u/2/d/1VvEa5VI9UvmDM9jLSaJNOAxjuuCrk953uBDBmgscO1s/edit?gid=0#gid=0" target="_blank" className="inline-block px-5 py-2.5 rounded-full border border-wikired/50 text-slate-900 hover:border-wikired hover:text-slate-900 transition font-medium">
+              Bases y Ontologías
+            </a>
+
             <div className="flex flex-wrap gap-3 pt-4">
               <a
                 href="/"
@@ -416,7 +379,7 @@ export default function VictimaPage() {
               </a>
             </div>
           </div>
-        
+
         </div>
       </header>
 
@@ -535,7 +498,7 @@ export default function VictimaPage() {
             <table className="ion-table table-fixed w-full">
               <thead>
                 <tr>
-                  <th>Auto</th>
+                  <th className="pl-4">Auto</th>
                   <th>Enlace JEP</th>
                   <th>Enlace Archive</th>
                 </tr>
@@ -543,7 +506,7 @@ export default function VictimaPage() {
               <tbody>
                 {autosJudiciales.map((auto) => (
                   <tr key={auto.nombre}>
-                    <td className="text-slate-900 font-semibold pr-4">{auto.nombre}</td>
+                    <td className="text-slate-900 font-semibold pl-4 pr-4">{auto.nombre}</td>
                     <td className="text-slate-900 space-y-1 pr-4">
                       <div className="flex items-start gap-2">
                         <span className="flex-1 break-all text-xs min-h-[20px]">{auto.jep || "—"}</span>

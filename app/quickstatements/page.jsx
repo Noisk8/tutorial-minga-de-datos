@@ -9,25 +9,20 @@ const tutorials = [
     title: "Crear un elemento nuevo",
     description: "Aprende a crear un nuevo elemento en Wikidata con etiquetas, descripciones, declaraciones, calificadores y referencias completas.",
     command: `CREATE
-LAST|Les|"Omar Inocencio Rojas"
-LAST|Len|"Omar Inocencio Rojas"
-LAST|Des|"persona colombiana asesinada el 21 de septiembre de 2005; caso asociado a falsos positivos"
-LAST|Den|"Colombian person killed on 21 September 2005; case associated with false positives"
-
-LAST|P31|Q5|S854|"https://relatoria.jep.gov.co//documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-CASANARE-055_14-julio-2022.pdf"|S813|+2025-12-16T00:00:00Z/11
-LAST|P21|Q6581097|S854|"https://relatoria.jep.gov.co//documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-CASANARE-055_14-julio-2022.pdf"|S813|+2025-12-16T00:00:00Z/11
-LAST|P27|Q739|S854|"https://relatoria.jep.gov.co//documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-CASANARE-055_14-julio-2022.pdf"|S813|+2025-12-16T00:00:00Z/11
-
-LAST|P570|+2005-09-21T00:00:00Z/11|S854|"https://relatoria.jep.gov.co//documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-CASANARE-055_14-julio-2022.pdf"|S813|+2025-12-16T00:00:00Z/11
-LAST|P20|Q1575548|P1932|"Sector Barranquillita, vereda Santa Cruz"|S854|"https://relatoria.jep.gov.co//documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-CASANARE-055_14-julio-2022.pdf"|S813|+2025-12-16T00:00:00Z/11
-
-LAST|P7153|Q130322|P3831|Q18658526|S854|"https://relatoria.jep.gov.co//documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-CASANARE-055_14-julio-2022.pdf"|S813|+2025-12-16T00:00:00Z/11
-
-LAST|P1196|Q149086|S854|"https://relatoria.jep.gov.co//documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-CASANARE-055_14-julio-2022.pdf"|S813|+2025-12-16T00:00:00Z/11
-LAST|P157|Q4115107|P1932|"Miembros del grupo especial Caníbal del BIRNO"|S854|"https://relatoria.jep.gov.co//documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-CASANARE-055_14-julio-2022.pdf"|S813|+2025-12-16T00:00:00Z/11
-LAST|P793|Q779179|S854|"https://relatoria.jep.gov.co//documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-CASANARE-055_14-julio-2022.pdf"|S813|+2025-12-16T00:00:00Z/11
-
-LAST|P1343|Q137351625|S854|"https://relatoria.jep.gov.co//documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-CASANARE-055_14-julio-2022.pdf"|S813|+2025-12-16T00:00:00Z/11`,
+LAST	Les	"Germán Gurrute Daza"
+LAST	Len	"Germán Gurrute Daza"
+LAST	Des	"persona asesinada en Colombia en el contexto de falsos positivos o ejecuciones extrajudiciales"
+LAST	Den	"person killed in Colombia in the context of the 'false positives scandal' or extrajudicial executions"
+LAST	P31	Q5	S248	Q137041260	S854	"https://relatoria.jep.gov.co/documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-HUILA-081_20-noviembre-2023.pdf"	!S1065	"https://archive.org/details/auto-srvr-sub-d-subcaso-huila-081-20-noviembre-2023"
+LAST	P21	Q6581097	S248	Q137041260	S854	"https://relatoria.jep.gov.co/documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-HUILA-081_20-noviembre-2023.pdf"	!S1065	"https://archive.org/details/auto-srvr-sub-d-subcaso-huila-081-20-noviembre-2023"
+LAST	P27	Q739	S248	Q137041260	S854	"https://relatoria.jep.gov.co/documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-HUILA-081_20-noviembre-2023.pdf"	!S1065	"https://archive.org/details/auto-srvr-sub-d-subcaso-huila-081-20-noviembre-2023"
+LAST	P570	+2006-10-10T00:00:00Z/11	S248	Q137041260	S854	"https://relatoria.jep.gov.co/documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-HUILA-081_20-noviembre-2023.pdf"	!S1065	"https://archive.org/details/auto-srvr-sub-d-subcaso-huila-081-20-noviembre-2023"
+LAST	P20	Q234920	S248	Q137041260	S854	"https://relatoria.jep.gov.co/documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-HUILA-081_20-noviembre-2023.pdf"	!S1065	"https://archive.org/details/auto-srvr-sub-d-subcaso-huila-081-20-noviembre-2023"
+LAST	P1196	Q149086	S248	Q137041260	S854	"https://relatoria.jep.gov.co/documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-HUILA-081_20-noviembre-2023.pdf"	!S1065	"https://archive.org/details/auto-srvr-sub-d-subcaso-huila-081-20-noviembre-2023"
+LAST	P157	Q4115107	S248	Q137041260	S854	"https://relatoria.jep.gov.co/documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-HUILA-081_20-noviembre-2023.pdf"	!S1065	"https://archive.org/details/auto-srvr-sub-d-subcaso-huila-081-20-noviembre-2023"
+LAST	P793	Q779179	S248	Q137041260	S854	"https://relatoria.jep.gov.co/documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-HUILA-081_20-noviembre-2023.pdf"	!S1065	"https://archive.org/details/auto-srvr-sub-d-subcaso-huila-081-20-noviembre-2023"
+LAST	P7153	Q130359	P3831	Q18658526	S248	Q137041260	S854	"https://relatoria.jep.gov.co/documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-HUILA-081_20-noviembre-2023.pdf"	!S1065	"https://archive.org/details/auto-srvr-sub-d-subcaso-huila-081-20-noviembre-2023"
+LAST	P1343	Q137041260	S248	Q137041260	S854	"https://relatoria.jep.gov.co/documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-HUILA-081_20-noviembre-2023.pdf"	!S1065	"https://archive.org/details/auto-srvr-sub-d-subcaso-huila-081-20-noviembre-2023"`,
     sections: [
       {
         section: "Crear el elemento",
@@ -171,14 +166,14 @@ LAST|P1343|Q137351625|S854|"https://relatoria.jep.gov.co//documentos/providencia
       },
       {
         section: "Resultado en Wikidata",
-        intro: "Después de ejecutar este comando, en el ítem Q135518890 (Javier Barrientos Bautista) verás:",
+        intro: <>Después de ejecutar este comando, en el ítem <a href="https://www.wikidata.org/wiki/Q135518890" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Q135518890</a> (Javier Barrientos Bautista) verás:</>,
         lines: [
           {
-            command: "significant place (P7153): Andean natural region of Colombia (Q130359)",
+            command: <>significant place (<a href="https://www.wikidata.org/wiki/Property:P7153" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P7153</a>): Andean natural region of Colombia (<a href="https://www.wikidata.org/wiki/Q130359" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Q130359</a>)</>,
             explanation: "La declaración principal aparecerá con esta estructura."
           },
           {
-            command: "— cualificador: object of statement has role (P3831): place of death (Q18658526)",
+            command: <>— cualificador: object of statement has role (<a href="https://www.wikidata.org/wiki/Property:P3831" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P3831</a>): place of death (<a href="https://www.wikidata.org/wiki/Q18658526" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Q18658526</a>)</>,
             explanation: "El calificador se mostrará indentado bajo la declaración principal."
           },
           {
@@ -194,31 +189,22 @@ LAST|P1343|Q137351625|S854|"https://relatoria.jep.gov.co//documentos/providencia
 const quickStatementsSteps = [
   {
     title: "Preparar los datos",
-    detail: "Organiza la información que vas a cargar en formato de tabla o lista estructurada.",
+    detail: <>Organiza la información de la persona a la que vas  acrear el ítem, <a href="/victima" className="text-wikiblue hover:underline">ver la ontología aquí.</a></>,
     actions: [
-      "Identifica las propiedades de Wikidata que necesitas (ej: P31, P570, P20).",
-      "Recopila los valores correspondientes para cada propiedad.",
-      "Organiza los datos en columnas: ítem, propiedad, valor, calificadores, referencias.",
-      "Verifica que los identificadores Q y P sean correctos.",
+      "Identifica las datos que vas a utilizar",
+      "Nombre, fecha de fallecimiento, lugar de fallecimiento, responsable, etc, ",
+
     ],
   },
-  {
-    title: "Crear comandos QuickStatements",
-    detail: "Convierte tus datos al formato de comandos que QuickStatements entiende.",
-    actions: [
-      "Usa el formato: QNUMBER|PROPERTY|VALUE para declaraciones básicas.",
-      "Para crear ítems nuevos: CREATE seguido de las declaraciones.",
-      "Añade calificadores con: QNUMBER|PROPERTY|VALUE|QUALIFIER_PROPERTY|QUALIFIER_VALUE.",
-      "Incluye referencias con: QNUMBER|PROPERTY|VALUE|S854|\"URL\".",
-      "Separa cada comando en una línea nueva.",
-    ],
-  },
+
   {
     title: "Ejecutar en QuickStatements",
     detail: "Carga y ejecuta tus comandos en la herramienta QuickStatements.",
     actions: [
-      "Accede a https://quickstatements.toolforge.org",
+      <>Accede a <a href="https://qs-dev.toolforge.org/" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">https://qs-dev.toolforge.org/</a></>,
       "Inicia sesión con tu cuenta de Wikidata.",
+      "Elige la opcion Nuevo Lote ",
+      "Elige Wikidata, Formato V1 y pon un nombre al lote",
       "Pega tus comandos en el área de texto.",
       "Revisa la vista previa para verificar que todo esté correcto.",
       "Haz clic en 'Run' para ejecutar los comandos.",
@@ -229,27 +215,22 @@ const quickStatementsSteps = [
 
 const quickStatementsExamples = [
   {
-    title: "Crear un ítem nuevo",
+    title: <> <a href="https://www.wikidata.org/wiki/Special:NewItem" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Crear un ítem nuevo</a></>,
     command: `CREATE
-LAST|Len|"Víctima de falsos positivos"
+LAST|Len|"Nombre de la persona"
 LAST|Den|"Persona víctima de ejecuciones extrajudiciales en Colombia"
 LAST|P31|Q5
 LAST|P27|Q739`,
     description: "Crea un nuevo ítem con etiqueta, descripción y declaraciones básicas.",
+    notes: [
+      "P31 es Instancia de",
+      "Q5 es persona",
+      "P27 es país de nacimiento",
+      "Q739 es Colombia"
+    ]
   },
-  {
-    title: "Añadir declaración con referencia",
-    command: `Q137342677|P570|+2007-01-15T00:00:00Z/11
-Q137342677|P570|+2007-01-15T00:00:00Z/11|S854|"https://example.com/source"
-Q137342677|P570|+2007-01-15T00:00:00Z/11|S813|+2024-12-15T00:00:00Z/11`,
-    description: "Añade fecha de muerte con URL de referencia y fecha de consulta.",
-  },
-  {
-    title: "Declaración con calificador",
-    command: `Q137342677|P793|Q124000336|P585|+2007-01-15T00:00:00Z/11
-Q137342677|P793|Q124000336|P276|Q2841`,
-    description: "Añade evento significativo con fecha y ubicación como calificadores.",
-  },
+
+
 ];
 
 const quickStatementsResources = [
@@ -260,12 +241,12 @@ const quickStatementsResources = [
   },
   {
     title: "QuickStatements Tool",
-    url: "https://quickstatements.toolforge.org",
+    url: "https://qs-dev.toolforge.org/",
     description: "Herramienta web para ejecutar comandos QuickStatements",
   },
   {
     title: "Generador de comandos",
-    url: "https://quickstatements.toolforge.org/#/batch",
+    url: "https://qs-dev.toolforge.org/#/batch",
     description: "Interfaz para crear lotes de comandos",
   },
 ];
@@ -308,7 +289,7 @@ export default function QuickStatementsPage() {
             ← Volver al home
           </a>
           <a
-            href="https://quickstatements.toolforge.org"
+            href="https://qs-dev.toolforge.org/"
             target="_blank"
             rel="noreferrer"
             className="wiki-button-primary"
@@ -317,6 +298,37 @@ export default function QuickStatementsPage() {
           </a>
         </div>
       </div>
+
+      {/* What is QuickStatements */}
+      <section className="mb-8">
+        <div className="wiki-card border-l-4 border-l-wikigreen">
+          <h2 className="font-display text-2xl text-wikidark mb-3 border-0 p-0 m-0">¿Qué es QuickStatements?</h2>
+          <p className="font-body text-wikidark leading-relaxed mb-4">
+            <strong>QuickStatements</strong> es una herramienta oficial de Wikimedia que permite crear y editar
+            elementos en <strong>Wikidata</strong> de manera masiva a través de comandos de texto simples.
+            En lugar de editar cada declaración manualmente desde la interfaz de Wikidata, QuickStatements
+            permite cargar cientos de afirmaciones de una sola vez, ahorrando tiempo y reduciendo errores.
+          </p>
+          <h3 className="font-display text-lg text-wikidark mb-2 border-0 p-0 m-0">¿Para qué nos sirve en la Minga de Datos?</h3>
+          <p className="font-body text-wikidark leading-relaxed mb-4">
+            En el contexto de documentar víctimas de <strong>ejecuciones extrajudiciales (&ldquo;falsos positivos&rdquo;) en Colombia</strong>,
+            QuickStatements nos permite:
+          </p>
+          <ul className="font-body text-wikidark space-y-2 list-disc list-inside text-sm mb-4">
+            <li><strong>Crear ítems en lote:</strong> registrar a múltiples personas en Wikidata en una sola sesión de trabajo.</li>
+            <li><strong>Añadir declaraciones con precisión:</strong> agregar propiedades como fecha de fallecimiento, lugar, responsables y fuentes de forma estructurada.</li>
+            <li><strong>Agregar referencias en masa:</strong> incluir las URLs de los autos judiciales del proceso y sus versiones archivadas en cada afirmación.</li>
+            <li><strong>Verificar antes de ejecutar:</strong> la herramienta ofrece una vista previa que permite revisar los comandos antes de aplicarlos.</li>
+          </ul>
+          <div className="wiki-notice">
+            <p className="font-body text-wikidark text-sm">
+              💡 <strong>Nota:</strong> QuickStatements trabaja con la sintaxis de comandos del tipo{" "}
+              <code className="font-mono text-sm">PROPIEDAD|VALOR</code>. Cada línea representa una declaración.
+              El resultado final queda público en Wikidata y puede ser verificado y editado por la comunidad.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Steps Section */}
       <section className="mb-8">
@@ -362,6 +374,16 @@ export default function QuickStatementsPage() {
                   {example.command}
                 </code>
               </pre>
+              {example.notes && (
+                <div className="mt-4 border-l-4 border-wikigray pl-4">
+                  <p className="font-body text-wikidark text-sm font-bold mb-1">Notas:</p>
+                  <ul className="font-body text-wikidark text-sm space-y-1 list-disc list-inside">
+                    {example.notes.map((note, index) => (
+                      <li key={index}>{note}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -379,17 +401,16 @@ export default function QuickStatementsPage() {
             <button
               key={tutorial.id}
               onClick={() => setActiveTutorialId(tutorial.id)}
-              className={`px-6 py-3 font-display font-bold text-sm transition-colors border-t border-l border-r border-b-0 rounded-t-md mr-2 ${
-                activeTutorialId === tutorial.id
-                  ? "bg-wikilight text-wikiblue border-wikigray -mb-px relative z-10"
-                  : "bg-gray-50 text-gray-500 border-transparent hover:bg-gray-100"
-              }`}
+              className={`px-6 py-3 font-display font-bold text-sm transition-colors border-t border-l border-r border-b-0 rounded-t-md mr-2 ${activeTutorialId === tutorial.id
+                ? "bg-wikilight text-wikiblue border-wikigray -mb-px relative z-10"
+                : "bg-gray-50 text-gray-500 border-transparent hover:bg-gray-100"
+                }`}
             >
               Tutorial {tutorial.id}: {tutorial.title}
             </button>
           ))}
         </div>
-        
+
         <div className="wiki-notice-info mb-6">
           <h3 className="font-display text-lg text-wikiblue mb-2">
             {activeTutorial.title}
@@ -429,9 +450,9 @@ export default function QuickStatementsPage() {
           </pre>
           <p className="font-body text-wikidark text-sm mt-3">
             💡 <strong>Tip:</strong> Puedes copiar este comando completo y pegarlo directamente en{" "}
-            <a 
-              href="https://quickstatements.toolforge.org" 
-              target="_blank" 
+            <a
+              href="https://qs-dev.toolforge.org/"
+              target="_blank"
               rel="noreferrer"
               className="text-wikiblue hover:underline"
             >
@@ -496,10 +517,10 @@ export default function QuickStatementsPage() {
               <strong>S813</strong>: Propiedad de referencia para fecha de consulta
             </li>
             <li>
-              <strong>P1932</strong>: Calificador para "nombre del objeto como aparece en la fuente"
+              <strong>P1932</strong>: Calificador para &ldquo;nombre del objeto como aparece en la fuente&rdquo;
             </li>
             <li>
-              <strong>P3831</strong>: Calificador para "rol del objeto"
+              <strong>P3831</strong>: Calificador para &ldquo;rol del objeto&rdquo;
             </li>
             <li>
               <strong>+YYYY-MM-DDT00:00:00Z/11</strong>: Formato de fecha con precisión de día

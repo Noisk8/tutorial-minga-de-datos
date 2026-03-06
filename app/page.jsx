@@ -2,13 +2,13 @@ import Image from "next/image";
 
 const tutorials = [
   {
-    title: "Persona Víctima",
+    title: "Ontología Víctima",
     href: "/victima",
-    tag: "Q137342677",
+    tag: "Ontología",
     color: "red",
     summary:
-      "Crea el ítem de la víctima con etiquetas multilingües, declara identidad, contexto de victimización y añade referencias web + archivo en cada afirmación.",
-    properties: ["P31", "P570", "P20", "P157", "P793", "P1343"],
+      "Identifica la ontología de los datos y crea el ítem de la víctima con etiquetas multilingües, declara identidad, contexto de victimización y añade referencias web + archivo en cada afirmación.",
+    properties: ["Ontología", "Persona", "Wikidata"],
   },
   {
     title: "QuickStatements",
@@ -16,14 +16,14 @@ const tutorials = [
     tag: "Herramienta",
     color: "green",
     summary:
-      "Crea elementos o cambia las declaraciones en Wikidata con QuickStatements.",
-    properties: ["CREATE", "LAST", "Sxxx"],
+      "Crea elementos o cambia las declaraciones en lote en Wikidata con QuickStatements.",
+    properties: ["Tutorial", "Wikidata", "Herramienta"],
   },
   {
     title: "Auto Judicial",
     href: "/auto",
-    tag: "Q137041260",
-    color: "blue",
+    tag: "Ontología",
+    color: "red",
     summary:
       "Modela el auto como documento legal: etiqueta con número y sala, fechas, jurisdicción y artículos citados, cada uno con fuentes y versión archivada.",
     properties: ["P31", "P577", "P1001", "P131", "P6864", "P1343"],
@@ -31,7 +31,7 @@ const tutorials = [
   {
     title: "Buenas Prácticas",
     href: "/buenas-practicas",
-    tag: "Guía",
+    tag: "Herramienta",
     color: "green",
     summary:
       "Desde Wikimedia Colombia pensamos en las buenas prácticas y en el cuidado. Conoce nuestra guía para el Colaboratorio de Memoria Histórica.",
@@ -55,18 +55,18 @@ export default function Page() {
               Minga de Datos
             </h1>
             <p className="font-body text-wikidark leading-relaxed mb-6">
-             Esta es un espacio para encontrar tutoriales sobre cómo contribuir a Wikidata con información relevante para la memoria histórica de Colombia. Aquí aprenderás a crear y editar elementos en Wikidata, añadiendo referencias y fuentes confiables para asegurar la veracidad de los datos.
+              Esta es un espacio para encontrar tutoriales sobre cómo contribuir a Wikidata con información relevante para la memoria histórica de Colombia. Aquí aprenderás a crear y editar elementos en Wikidata, añadiendo referencias y fuentes confiables para asegurar la veracidad de los datos.
             </p>
 
             {/* How to use box */}
-            <div className="wiki-notice">
+            {/* <div className="wiki-notice">
               <p className="font-display font-bold text-wikidark mb-2">Cómo usar</p>
               <ul className="font-body text-wikidark space-y-1 list-disc list-inside">
                 <li>Encuentra Referencias</li>
                 <li>Busca las declaraciones.</li>
                 <li>Copia y pega</li>
               </ul>
-            </div>
+            </div> */}
           </div>
 
           <div className="w-32 h-32 md:w-48 md:h-48 relative flex-shrink-0">
@@ -85,15 +85,15 @@ export default function Page() {
       {/* Tutorials Grid */}
       <div className="grid md:grid-cols-2 gap-6">
         {tutorials.map((tutorial) => {
-          const borderColor = 
+          const borderColor =
             tutorial.color === "red" ? "border-l-4 border-l-wikired" :
-            tutorial.color === "green" ? "border-l-4 border-l-wikigreen" :
-            "border-l-4 border-l-wikiblue";
-          
+              tutorial.color === "green" ? "border-l-4 border-l-wikigreen" :
+                "border-l-4 border-l-wikiblue";
+
           const badgeColor =
             tutorial.color === "red" ? "bg-wikired text-white" :
-            tutorial.color === "green" ? "bg-wikigreen text-white" :
-            "bg-wikiblue text-white";
+              tutorial.color === "green" ? "bg-wikigreen text-white" :
+                "bg-wikiblue text-white";
 
           return (
             <a
@@ -110,22 +110,40 @@ export default function Page() {
                 </span>
               </div>
 
-            <p className="font-body text-wikidark leading-relaxed mb-4 text-sm">
-              {tutorial.summary}
-            </p>
+              <p className="font-body text-wikidark leading-relaxed mb-4 text-sm">
+                {tutorial.summary}
+              </p>
 
-            <div className="flex flex-wrap gap-2 mb-4">
-              {tutorial.properties.map((prop) => (
-                <code key={prop} className="text-xs">
-                  {prop}
-                </code>
-              ))}
-            </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {tutorial.properties.map((prop, index) => {
+                  const isPropertyOrItem = /^[PQ]\d+$/.test(prop);
+                  const href = isPropertyOrItem
+                    ? `https://www.wikidata.org/wiki/${prop.startsWith("P") ? "Property:" : ""}${prop}`
+                    : null;
 
-            <div className="font-body text-wikiblue text-sm">
-              Ir al tutorial →
-            </div>
-          </a>
+                  return (
+                    <code key={index} className="text-xs font-mono">
+                      {href ? (
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-wikiblue hover:underline"
+                        >
+                          {prop}
+                        </a>
+                      ) : (
+                        prop
+                      )}
+                    </code>
+                  );
+                })}
+              </div>
+
+              <div className="font-body text-wikiblue text-sm">
+                Ir al tutorial →
+              </div>
+            </a>
           );
         })}
       </div>

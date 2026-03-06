@@ -3,34 +3,34 @@
 const autoSteps = [
   {
     title: "Crear el ítem del auto",
-    detail: "Crea un nuevo ítem en Wikidata para el auto judicial como documento.",
+    detail: <> <a href="https://www.wikidata.org/wiki/Special:NewItem" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Crea un nuevo ítem</a> en Wikidata para el auto judicial como documento.</>,
     actions: [
       "Etiqueta: incluye número, sala o tipo de decisión (ej: Auto SRVR-SUB-D Subcaso Huila-081).",
       "Descripción: “Auto judicial que describe hechos de falsos positivos en Huila (2023)”.",
       "Alias: número de radicado o expediente.",
-      "Propiedad inicial: P31 instancia de → documento legal (Q11032) o clase local aplicable.",
+      <>Propiedad inicial: Instalancia de (<a href="https://www.wikidata.org/wiki/Property:P31" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P31</a>) → documento legal (<a href="https://www.wikidata.org/wiki/Q11032" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Q11032</a>) o clase local aplicable.</>,
     ],
   },
   {
     title: "Contexto legal y territorial",
     detail: "Añade fecha, jurisdicción y territorio donde aplica el auto.",
     actions: [
-      "P577 fecha de publicación → fecha exacta del auto.",
-      "P1001 jurisdicción → Colombia (o entidad territorial competente).",
-      "P131 ubicación administrativa → región/departamento asociado.",
-      "P1343 descrito en la fuente → proceso o expediente principal.",
-      "Referencias: URL oficial (P854), archivo (P1065), fecha de consulta (P813).",
+      <>Fecha de publicación (<a href="https://www.wikidata.org/wiki/Property:P577" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P577</a>) → fecha exacta del auto.</>,
+      <>Jurisdicción (<a href="https://www.wikidata.org/wiki/Property:P1001" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P1001</a>) → Colombia (o entidad territorial competente).</>,
+      <>Ubicación administrativa (<a href="https://www.wikidata.org/wiki/Property:P131" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P131</a>) → región/departamento asociado.</>,
+      <>Descrito en la fuente (<a href="https://www.wikidata.org/wiki/Property:P1343" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P1343</a>) → proceso o expediente principal.</>,
+      <>Referencias: URL oficial (<a href="https://www.wikidata.org/wiki/Property:P854" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P854</a>), archivo (<a href="https://www.wikidata.org/wiki/Property:P1065" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P1065</a>), fecha de consulta (<a href="https://www.wikidata.org/wiki/Property:P813" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P813</a>).</>,
     ],
   },
   {
     title: "Citas y vínculos con víctimas",
     detail: "Relaciona artículos citados, víctimas y documentos base.",
     actions: [
-      "P6864 cita → artículos de ley o normas aplicables.",
-      "P4510 regula → persona víctima o grupo afectado (si aplica).",
-      "P144 basado en → sentencia/informe/expediente previo.",
-      "P828 causa de → medidas o efectos ordenados.",
-      "Repite P854 + P1065 + P813 en cada afirmación.",
+      <>Cita (<a href="https://www.wikidata.org/wiki/Property:P6864" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P6864</a>) → artículos de ley o normas aplicables.</>,
+      <>Regula (<a href="https://www.wikidata.org/wiki/Property:P4510" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P4510</a>) → persona víctima o grupo afectado (si aplica).</>,
+      <>Basado en (<a href="https://www.wikidata.org/wiki/Property:P144" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P144</a>) → sentencia/informe/expediente previo.</>,
+      <>Causa de (<a href="https://www.wikidata.org/wiki/Property:P828" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P828</a>) → medidas o efectos ordenados.</>,
+      <>Repite <a href="https://www.wikidata.org/wiki/Property:P854" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P854</a> + <a href="https://www.wikidata.org/wiki/Property:P1065" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P1065</a> + <a href="https://www.wikidata.org/wiki/Property:P813" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P813</a> en cada afirmación.</>,
     ],
   },
 ];
@@ -58,50 +58,20 @@ const autoLanguageRows = [
   },
 ];
 
-const autoSources = [
-  "https://relatoria.jep.gov.co//documentos/providencias/1/1/Auto_SRVR-SUB-D-SUBCASO-HUILA-081_20-noviembre-2023.pdf",
-  "https://archive.org/details/auto-srvr-sub-d-subcaso-huila-081-20-noviembre-2023",
-];
+
 
 const autoStatements = [
-  { property: "instancia de (P31)", value: "auto judicial(Q696617)", references: true },
-  { property: "título oficial (P1476)", value: "Auto SRVR-SUB-D Subcaso Huila-081", references: true },
-  { property: "autor (P2093)", value: "Jurisdicción Especial para la Paz (Q51881311)", references: true },
-  { property: "fecha de publicación (P577)", value: "20 nov 2023", references: true },
-  { property: "idioma(P407)", value: "español (Q1321)", references: true },
-  
+  { property: <>instancia de (<a href="https://www.wikidata.org/wiki/Property:P31" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P31</a>)</>, value: <>auto judicial (<a href="https://www.wikidata.org/wiki/Q696617" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Q696617</a>)</>, references: true },
+  { property: <>título oficial (<a href="https://www.wikidata.org/wiki/Property:P1476" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P1476</a>)</>, value: "Auto SRVR-SUB-D Subcaso Huila-081", references: true },
+  { property: <>autor (<a href="https://www.wikidata.org/wiki/Property:P2093" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P2093</a>)</>, value: <>Jurisdicción Especial para la Paz (<a href="https://www.wikidata.org/wiki/Q51881311" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Q51881311</a>)</>, references: true },
+  { property: <>fecha de publicación (<a href="https://www.wikidata.org/wiki/Property:P577" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P577</a>)</>, value: "20 nov 2023", references: true },
+  { property: <>idioma (<a href="https://www.wikidata.org/wiki/Property:P407" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">P407</a>)</>, value: <>español (<a href="https://www.wikidata.org/wiki/Q1321" target="_blank" rel="noreferrer" className="text-wikiblue hover:underline">Q1321</a>)</>, references: true },
+
 ];
 
 const autoDeclarationList = autoStatements.map((s) => s.property);
 
-function StatementCard({ stmt }) {
-  return (
-    <div className="rounded-2xl border border-wikiblue/25 overflow-hidden ion-panel">
-      <div className="grid md:grid-cols-[260px_1fr]">
-        <div className="bg-white border-b md:border-b-0 md:border-r border-wikiblue/20 p-4 md:p-5">
-          <p className="text-slate-600 text-sm">Propiedad</p>
-          <p className="text-lg font-semibold text-wikiblue">{stmt.property}</p>
-        </div>
-        <div className="p-4 md:p-5 space-y-3">
-          <div>
-            <p className="text-slate-600 text-sm">Valor</p>
-            <p className="text-slate-900 font-semibold text-lg leading-relaxed">{stmt.value}</p>
-          </div>
-          {stmt.references && (
-            <div className="bg-white border border-wikiblue/25 rounded-xl p-3">
-              <p className="text-xs uppercase tracking-[0.18em] text-slate-700 mb-2">Referencias (añadir en la UI)</p>
-              <ul className="text-sm text-slate-900 space-y-1">
-                <li>P854 dirección web de la referencia → URL oficial del auto</li>
-                <li>P1065 dirección web de archivo → enlace de archive.org</li>
-                <li>P813 fecha de consulta → fecha actual al cargar la fuente</li>
-              </ul>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
+
 
 function StepSection({ id, title, steps }) {
   return (
@@ -131,7 +101,7 @@ function StepSection({ id, title, steps }) {
                   </span>
                   <div>
                     <p className="text-xs uppercase tracking-[0.2em] text-slate-700">
-                    
+
                     </p>
                     <h3 className="text-xl font-semibold text-slate-900">{step.title}</h3>
                   </div>
@@ -169,7 +139,7 @@ export default function AutoPage() {
     <main className="max-w-6xl mx-auto px-4 md:px-8 py-10 md:py-14 text-slate-900">
       <header className="glass rounded-3xl border border-wikiblue/30 p-8 md:p-12 halo">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-          <div className="max-w-3xl space-y-4">
+          <div className="flex-1 space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-wikiblue/30 text-xs uppercase tracking-[0.2em] text-slate-700">
               Tutorial de auto judicial
             </div>
@@ -282,7 +252,7 @@ export default function AutoPage() {
         </div>
       </section>
 
-      <section id="declaraciones" className="py-12 md:py-16">
+      {/* <section id="declaraciones" className="py-12 md:py-16">
         <div className="glass rounded-3xl border border-wikiblue/30 p-8 md:p-10 halo">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6">
             <div>
@@ -322,7 +292,7 @@ export default function AutoPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

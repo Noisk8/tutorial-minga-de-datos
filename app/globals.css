@@ -7,11 +7,44 @@
   background: #ffffff;
 }
 
+html {
+  background-color: #fcfcfc;
+}
+
 body {
   @apply text-wikidark font-body;
-  background-color: #ffffff;
+  background-color: transparent;
   min-height: 100vh;
   color: #202122;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -15;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  pointer-events: none;
+  background: radial-gradient(ellipse 80% 80% at 50% 0%, transparent 30%, #fcfcfc 90%);
 }
 
 ::selection {
@@ -42,9 +75,15 @@ a:hover {
   margin-bottom: 1rem;
 }
 
+/* Glass and halo styles used in layout cards */
+.glass,
+.halo {
+  background-color: #ffffff;
+}
+
 .wiki-card:hover {
   border-color: #0645AD;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Wikipedia-style table */
@@ -59,7 +98,7 @@ a:hover {
 .wiki-table th {
   background: #EAECF0;
   border: 1px solid #A2A9B1;
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem 1rem;
   text-align: left;
   font-weight: bold;
   font-family: Georgia, serif;
@@ -67,7 +106,7 @@ a:hover {
 
 .wiki-table td {
   border: 1px solid #A2A9B1;
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem 1rem;
   vertical-align: top;
 }
 
@@ -128,7 +167,8 @@ a:hover {
 }
 
 /* Code blocks */
-code, pre {
+code,
+pre {
   font-family: "Courier New", Courier, monospace;
   background: #F8F9FA;
   padding: 0.125rem 0.25rem;
@@ -144,7 +184,12 @@ pre {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: Georgia, serif;
   border-bottom: 1px solid #A2A9B1;
   padding-bottom: 0.25rem;
