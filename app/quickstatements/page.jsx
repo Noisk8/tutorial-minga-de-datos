@@ -330,6 +330,7 @@ export default function QuickStatementsPage() {
         </div>
       </section>
 
+
       {/* Steps Section */}
       <section className="mb-8">
         <h2 className="font-display text-2xl text-wikidark mb-4">Cómo usar QuickStatements</h2>

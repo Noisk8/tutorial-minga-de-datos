@@ -11,6 +11,7 @@ export default function Navbar() {
         { href: "/victima", label: "Ontología Persona" },
         { href: "/auto", label: "Auto" },
         { href: "/quickstatements", label: "QuickStatements" },
+        { href: "/openrefine", label: "OpenRefine" },
         { href: "/buenas-practicas", label: "Buenas Prácticas" },
     ];
 

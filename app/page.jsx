@@ -37,6 +37,15 @@ const tutorials = [
       "Desde Wikimedia Colombia pensamos en las buenas prácticas y en el cuidado. Conoce nuestra guía para el Colaboratorio de Memoria Histórica.",
     properties: ["PDF", "Guía", "Memoria"],
   },
+  {
+    title: "OpenRefine",
+    href: "/openrefine",
+    tag: "Herramienta",
+    color: "blue",
+    summary:
+      "Limpia, transforma y enriquece datos desordenados. Reconcilia hojas de cálculo con Wikidata para una ingesta masiva y estructurada.",
+    properties: ["Tutorial", "Wikidata", "Herramienta"],
+  },
 ];
 
 export default function Page() {
@@ -96,25 +105,27 @@ export default function Page() {
                 "bg-wikiblue text-white";
 
           return (
-            <a
+            <div
               key={tutorial.href}
-              href={tutorial.href}
-              className={`wiki-card block hover:no-underline ${borderColor}`}
+              className={`wiki-card flex flex-col relative ${borderColor}`}
             >
-              <div className="flex items-start justify-between mb-3">
-                <h2 className="font-display text-xl text-wikidark border-0 m-0 p-0">
-                  {tutorial.title}
+              <a href={tutorial.href} className="absolute inset-0 z-0" aria-label={`Ir al tutorial ${tutorial.title}`}></a>
+              <div className="flex items-start justify-between mb-3 relative z-10 pointer-events-none">
+                <h2 className="font-display text-xl text-wikidark border-0 m-0 p-0 pointer-events-auto">
+                  <a href={tutorial.href} className="hover:text-wikiblue transition-colors hover:no-underline">
+                    {tutorial.title}
+                  </a>
                 </h2>
                 <span className={`text-xs font-body px-2 py-1 border-0 ${badgeColor}`}>
                   {tutorial.tag}
                 </span>
               </div>
 
-              <p className="font-body text-wikidark leading-relaxed mb-4 text-sm">
+              <p className="font-body text-wikidark leading-relaxed mb-4 text-sm relative z-10 pointer-events-none">
                 {tutorial.summary}
               </p>
 
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-2 mb-4 relative z-10">
                 {tutorial.properties.map((prop, index) => {
                   const isPropertyOrItem = /^[PQ]\d+$/.test(prop);
                   const href = isPropertyOrItem
@@ -122,7 +133,7 @@ export default function Page() {
                     : null;
 
                   return (
-                    <code key={index} className="text-xs font-mono">
+                    <code key={index} className="text-xs font-mono bg-white relative">
                       {href ? (
                         <a
                           href={href}
@@ -140,10 +151,10 @@ export default function Page() {
                 })}
               </div>
 
-              <div className="font-body text-wikiblue text-sm">
+              <div className="font-body text-wikiblue text-sm mt-auto relative z-10 pointer-events-none">
                 Ir al tutorial →
               </div>
-            </a>
+            </div>
           );
         })}
       </div>
